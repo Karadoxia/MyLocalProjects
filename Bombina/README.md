@@ -1,120 +1,99 @@
-# 🐸 Bombina - Cybersecurity AI Assistant
+# Bombina 🐸
+## Portable Offensive Security AI Assistant
 
-A locally-hosted, fine-tuned LLM specialized in cybersecurity, pentesting, and exploit development.
+A **fully offline, portable** cybersecurity AI built on local LLM with RAG capabilities.
 
-## Architecture
+---
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      BOMBINA STACK                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    │
+│   │  User Chat  │───▶│  RAG Layer  │───▶│   Bombina   │    │
+│   │   (Input)   │    │   (FAISS)   │    │    (LLM)    │    │
+│   └─────────────┘    └─────────────┘    └─────────────┘    │
+│                             │                   │           │
+│                             ▼                   ▼           │
+│                    ┌─────────────┐    ┌─────────────┐       │
+│                    │  Knowledge  │    │    LoRA     │       │
+│                    │    Base     │    │   Weights   │       │
+│                    └─────────────┘    └─────────────┘       │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│   Feedback Loop: Logs → Curation → Retraining → Upgrade    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📁 Project Structure
 
 ```
 Bombina/
 ├── configs/
-│   └── modelfile              # Ollama model configuration
+│   ├── modelfile           # Ollama model configuration
+│   └── lora_config.yaml    # LoRA fine-tuning parameters
 ├── data/
-│   ├── training/              # Fine-tuning datasets
-│   │   └── cybersecurity_training.jsonl
-│   ├── rag/                   # RAG knowledge base
-│   │   └── security_basics.md
-│   └── chroma_db/             # Vector database (auto-created)
-├── models/
-│   ├── embeddings/            # Local embedding model cache
-│   └── bombina-finetuned/     # Fine-tuned model weights
-├── scripts/
-│   ├── run_bombina.sh         # Quick launcher (CLI)
-│   ├── rag_system.py          # RAG-enhanced chat
-│   └── finetune.py            # Fine-tuning script
-└── venv/                      # Python virtual environment
+│   ├── datasets/           # Training data by category
+│   ├── logs/               # Session & feedback logs
+│   ├── rag/                # RAG knowledge base documents
+│   ├── training/           # Combined training data
+│   └── faiss_index/        # FAISS vector index
+├── lora/                   # LoRA adapter versions
+├── models/                 # Model files & embeddings
+├── retrain/                # Retraining pipeline
+├── scripts/                # All Python scripts
+└── evaluation/             # Model evaluation results
 ```
 
-## Quick Start
+---
 
-### 1. CLI Chat (Basic)
-```bash
-ollama run bombina
-```
+## 🚀 Quick Start
 
-### 2. Web UI (Open WebUI) 🌐
+### 1. Install Dependencies
 ```bash
-# Already running at:
-http://localhost:3000
-```
-
-### 3. RAG-Enhanced Chat (with knowledge base)
-```bash
-cd ~/MyLocalProjects/Bombina
+cd Bombina
 source venv/bin/activate
-python scripts/rag_system.py
+pip install -r requirements.txt
 ```
 
-### 4. Fine-tune on Custom Data
+### 2. Create Bombina Model
 ```bash
-cd ~/MyLocalProjects/Bombina
-source venv/bin/activate
-# Add your training data to data/training/
-python scripts/finetune.py
+cd configs && ollama create bombina -f modelfile
 ```
 
-## Current Setup
-
-| Component | Status | Details |
-|-----------|--------|---------|
-| Base Model | ✅ | qwen2.5-coder:3b |
-| Ollama | ✅ | Running on localhost:11434 |
-| Open WebUI | ✅ | http://localhost:3000 |
-| RAG System | ✅ | LlamaIndex + ChromaDB |
-| Fine-tuning | ✅ | Unsloth + LoRA ready |
-| GPU | ✅ | Quadro M1000M (4GB VRAM) |
-
-## Adding Knowledge (RAG)
-
-Add documents to `data/rag/` folder:
-- `.txt`, `.md`, `.pdf` files supported
-- Security docs, CVE descriptions, tool manuals
-- The RAG system will automatically index them
-
-## Fine-tuning
-
-1. Add training examples to `data/training/cybersecurity_training.jsonl`:
-```json
-{"instruction": "Your question/task", "output": "Expected response"}
-```
-
-2. Run fine-tuning:
+### 3. Run Bombina
 ```bash
-python scripts/finetune.py
+# Simple chat with logging
+python scripts/bombina_chat.py
+
+# Chat with RAG integration
+python scripts/bombina_unified.py
 ```
 
-3. The fine-tuned model will be exported to GGUF format for Ollama
+---
 
-## API Usage
+## 📊 Training Pipeline
 
-### Ollama API
-```python
-import requests
+1. **Collect Feedback**: Use /feedback and /correct during chat
+2. **Curate Dataset**: python scripts/curate_dataset.py
+3. **Fine-tune**: python scripts/finetune_v2.py
+4. **Update Model**: ollama create bombina-v2 -f modelfile
 
-response = requests.post('http://localhost:11434/api/generate', json={
-    'model': 'bombina',
-    'prompt': 'Write a port scanner in Python',
-    'stream': False
-})
-print(response.json()['response'])
+---
+
+## 🗄️ RAG Setup
+
+Add documents to data/rag/ then:
+```bash
+python scripts/rag_v2.py  # Select option 1
 ```
 
-### RAG Query (Python)
-```python
-from scripts.rag_system import setup_bombina_rag, load_existing_index, query_bombina
+---
 
-storage_context, _ = setup_bombina_rag()
-index = load_existing_index(storage_context)
-response = query_bombina("Explain SQL injection", index)
-print(response)
-```
-
-## Ports & Services
-
-| Service | Port | URL |
-|---------|------|-----|
-| Ollama API | 11434 | http://localhost:11434 |
-| Open WebUI | 3000 | http://localhost:3000 |
-
-## License
-
+## 📜 License
 For educational and authorized security testing only.

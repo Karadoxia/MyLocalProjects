@@ -1,0 +1,47 @@
+# Bombina LoRA Configuration
+# Optimized for: Quadro M1000M (4GB VRAM) + 62GB RAM
+# Strategy: Offload to CPU, use 4-bit quantization
+
+# Base Model
+model_name: Qwen/Qwen2.5-Coder-3B-Instruct
+load_in_4bit: true
+
+# LoRA Parameters (tuned for reasoning retention)
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+
+# Target all attention + MLP layers for maximum reasoning capture
+target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+
+# Training Parameters (conservative for 4GB VRAM)
+learning_rate: 2e-4
+lr_scheduler_type: cosine
+warmup_ratio: 0.05
+
+num_train_epochs: 3
+per_device_train_batch_size: 1  # Reduced for low VRAM
+gradient_accumulation_steps: 8  # Effective batch = 8
+
+# Sequence length (reduced for memory)
+max_seq_length: 2048
+
+# Precision (fp16 for M1000M compatibility)
+bf16: false
+fp16: true
+
+# Memory optimization
+gradient_checkpointing: true
+optim: adamw_8bit
+
+# Output
+output_dir: ./lora/v1_base
+save_steps: 100
+logging_steps: 10
