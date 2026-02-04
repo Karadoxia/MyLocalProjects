@@ -1,0 +1,30 @@
+{"instruction": "Give me a penetration testing tip.", "input": "Looking for practical advice", "output": "Always screenshot your findings - screenshots are irrefutable evidence for reports."}
+{"instruction": "Give me a penetration testing tip.", "input": "Need a quick tip", "output": "Keep multiple shells/access methods - if one dies, you don't lose your foothold."}
+{"instruction": "Give me a penetration testing tip.", "input": "Need a quick tip", "output": "Test exploits in a lab first before running against real targets."}
+{"instruction": "Give me a penetration testing tip.", "input": "Need a quick tip", "output": "Save all tool output to files - you can always analyze later."}
+{"instruction": "Give me a penetration testing tip.", "input": "", "output": "Check version numbers carefully - one minor version can mean vulnerable or not."}
+{"instruction": "Give me a penetration testing tip.", "input": "Looking for practical advice", "output": "Rotate IP addresses if possible to avoid detection correlation."}
+{"instruction": "Give me a penetration testing tip.", "input": "Need a quick tip", "output": "Use tmux or screen to keep sessions alive and organized."}
+{"instruction": "Give me a penetration testing tip.", "input": "", "output": "Always have an exit strategy - know how to clean up if needed."}
+{"instruction": "Give me a penetration testing tip.", "input": "Need a quick tip", "output": "Read the full output of tools - important details often hidden in verbose output."}
+{"instruction": "Give me a penetration testing tip.", "input": "", "output": "Check robots.txt and sitemap.xml early - they often reveal hidden paths."}
+{"instruction": "Give me a penetration testing tip.", "input": "", "output": "Look at JavaScript files for API endpoints and secrets."}
+{"instruction": "Give me a penetration testing tip.", "input": "Looking for practical advice", "output": "Error messages often leak valuable information - trigger them intentionally."}
+{"instruction": "Give me a penetration testing tip.", "input": "Need a quick tip", "output": "Check backup files (.bak, .old, ~) - they often contain source code."}
+{"instruction": "Give me a penetration testing tip.", "input": "Looking for practical advice", "output": "DNS records can reveal internal naming schemes and infrastructure."}
+{"instruction": "Give me a penetration testing tip.", "input": "", "output": "HTTP headers often leak server versions and technologies."}
+{"instruction": "Give me a penetration testing tip.", "input": "Looking for practical advice", "output": "Comments in HTML/JS can reveal debugging endpoints or credentials."}
+{"instruction": "Give me a penetration testing tip.", "input": "Need a quick tip", "output": "Run whoami and id after every shell - confirm your context."}
+{"instruction": "Give me a penetration testing tip.", "input": "Need a quick tip", "output": "Keep credential lists organized by source and privilege level."}
+{"instruction": "Give me a penetration testing tip.", "input": "", "output": "Test null byte injection in file paths and parameters."}
+{"instruction": "Give me a penetration testing tip.", "input": "Looking for practical advice", "output": "Check for timing differences in login responses - username enumeration."}
+{"instruction": "Give me a penetration testing tip.", "input": "", "output": "Cookie attributes (HttpOnly, Secure) often missing - easy findings."}
+{"instruction": "Give me a penetration testing tip.", "input": "Looking for practical advice", "output": "Test all HTTP methods on endpoints - PUT/DELETE often overlooked."}
+{"instruction": "Give me a penetration testing tip.", "input": "", "output": "Look for admin panels at common paths (/admin, /manager, /wp-admin)."}
+{"instruction": "Give me a penetration testing tip.", "input": "Looking for practical advice", "output": "Check SSL certificates for additional domain names and email addresses."}
+{"instruction": "Give me a penetration testing tip.", "input": "Need a quick tip", "output": "Use Burp's response comparison to spot subtle differences."}
+{"instruction": "Give me a penetration testing tip.", "input": "Looking for practical advice", "output": "Set up a dedicated note-taking system before you start testing."}
+{"instruction": "Give me a penetration testing tip.", "input": "", "output": "Run continuous monitoring (tcpdump, procmon) to catch everything."}
+{"instruction": "Give me a penetration testing tip.", "input": "Looking for practical advice", "output": "Check for exposed .git or .svn directories - source code goldmine."}
+{"instruction": "Give me a penetration testing tip.", "input": "Looking for practical advice", "output": "Test for HTTP request smuggling on load balancers."}
+{"instruction": "Give me a penetration testing tip.", "input": "", "output": "Always decode Base64 strings you encounter - often contain secrets."}

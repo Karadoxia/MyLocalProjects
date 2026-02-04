@@ -1,0 +1,10 @@
+{"instruction": "What should I know about PCI DSS penetration testing?", "input": "", "output": "Quarterly scans required. Annual pentest. Internal and external. Document methodology. Test segmentation controls."}
+{"instruction": "What should I know about HIPAA security testing?", "input": "", "output": "Risk assessment required. Technical safeguards testing. Document access controls. Verify audit logging."}
+{"instruction": "What should I know about SOC 2 penetration testing?", "input": "", "output": "Annual pentest typically. Test availability, security, confidentiality controls. Provide attestation letter."}
+{"instruction": "What should I know about GDPR security testing?", "input": "", "output": "Regular testing required. Test data protection measures. Verify encryption. Check access controls."}
+{"instruction": "What should I know about ISO 27001 testing?", "input": "", "output": "Regular vulnerability assessments. Penetration testing as control. Document in risk treatment plan."}
+{"instruction": "What should I know about NIST CSF alignment?", "input": "", "output": "Map findings to NIST categories. Identify, Protect, Detect, Respond, Recover framework alignment."}
+{"instruction": "What should I know about pentest report for auditors?", "input": "", "output": "Include: scope, methodology, findings with evidence, risk ratings, remediation guidance. Executive summary crucial."}
+{"instruction": "What should I know about vulnerability vs penetration test?", "input": "", "output": "Vuln scan finds issues automatically. Pentest manually exploits to prove impact. Pentest validates scanner findings."}
+{"instruction": "What should I know about scope for compliance testing?", "input": "", "output": "In-scope systems clearly defined. Include connected systems. Test time windows. Emergency contacts required."}
+{"instruction": "What should I know about remediation verification?", "input": "", "output": "Retest after fixes. Confirm vulnerability resolved. Document verification. Update risk register."}

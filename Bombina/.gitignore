@@ -1,2 +1,25 @@
 data/mitre/cti/
 scripts/unsloth_compiled_cache/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Rust
+bombina-app/target/
+*.rlib
+
+# Logs
+*.log
+audit_log.jsonl
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Temp
+*.tmp
+.DS_Store

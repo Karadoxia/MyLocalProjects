@@ -1,0 +1,14 @@
+[package]
+name = "bombina-ui"
+version.workspace = true
+edition.workspace = true
+description = "UI components for Bombina cross-platform app"
+
+[dependencies]
+dioxus = { workspace = true }
+bombina-core = { path = "../bombina-core" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+tracing = { workspace = true }

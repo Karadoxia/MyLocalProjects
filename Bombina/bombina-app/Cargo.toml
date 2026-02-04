@@ -1,0 +1,59 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/bombina-core",
+    "crates/bombina-ui",
+    "crates/bombina-tools",
+    "desktop",
+    # "mobile",  # Uncomment when ready for mobile
+    # "web",     # Uncomment when ready for web
+]
+
+[workspace.package]
+version = "0.1.0"
+authors = ["Bombina Team"]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/your-repo/bombina-app"
+description = "Cross-platform AI-powered penetration testing assistant"
+
+[workspace.dependencies]
+# Dioxus framework
+dioxus = "0.5"
+dioxus-desktop = "0.5"
+dioxus-mobile = "0.5"
+dioxus-web = "0.5"
+
+# Async runtime
+tokio = { version = "1.35", features = ["full"] }
+
+# HTTP client
+reqwest = { version = "0.11", features = ["json", "stream"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.6", features = ["v4", "serde"] }
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# Async channels
+futures = "0.3"
+async-stream = "0.3"
+
+# Config
+directories = "5.0"
+toml = "0.8"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true

@@ -1,0 +1,13 @@
+[package]
+name = "bombina-tools"
+version.workspace = true
+edition.workspace = true
+description = "Pentest tool wrappers for Bombina"
+
+[dependencies]
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }

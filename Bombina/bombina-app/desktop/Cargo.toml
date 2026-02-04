@@ -1,0 +1,24 @@
+[package]
+name = "bombina-desktop"
+version.workspace = true
+edition.workspace = true
+description = "Bombina Desktop Application - AI-powered penetration testing assistant"
+
+[[bin]]
+name = "bombina"
+path = "src/main.rs"
+
+[dependencies]
+bombina-core = { path = "../crates/bombina-core" }
+bombina-ui = { path = "../crates/bombina-ui" }
+
+dioxus = { workspace = true }
+dioxus-desktop = { workspace = true }
+tokio = { workspace = true }
+reqwest = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+anyhow = { workspace = true }
+chrono = { workspace = true }

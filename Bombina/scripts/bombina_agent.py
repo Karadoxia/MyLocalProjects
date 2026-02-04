@@ -26,6 +26,13 @@ from dataclasses import dataclass, field
 from enum import Enum
 import requests
 
+# Import Policy Engine for scope validation
+try:
+    from policy_engine import PolicyEngine, EngagementScope, RiskLevel as PolicyRisk
+    POLICY_AVAILABLE = True
+except ImportError:
+    POLICY_AVAILABLE = False
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # CONFIGURATION
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -35,7 +42,7 @@ LOG_DIR = BASE_DIR / "data" / "agent_logs"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
 OLLAMA_API = "http://localhost:11434/api/generate"
-MODEL_NAME = "bombina"
+MODEL_NAME = "bombina-stable"  # Stable model optimized for CPU inference
 
 # Risk thresholds for detection-aware execution
 class RiskLevel(Enum):

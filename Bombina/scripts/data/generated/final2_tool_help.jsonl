@@ -1,0 +1,60 @@
+{"instruction": "How do I use nmap to run a SYN scan?", "input": "", "output": "Use: nmap -sS TARGET\n\nSYN scan is stealthy (half-open), fast, and requires root."}
+{"instruction": "How do I use nmap to detect service versions?", "input": "", "output": "Use: nmap -sV TARGET\n\nVersion detection probes open ports to identify services."}
+{"instruction": "How do I use nmap to run all default scripts?", "input": "", "output": "Use: nmap -sC TARGET\n\nRuns default NSE scripts for common enumeration."}
+{"instruction": "How do I use nmap to scan all ports?", "input": "", "output": "Use: nmap -p- TARGET\n\nScans all 65535 ports instead of just top 1000."}
+{"instruction": "How do I use nmap to do aggressive scan?", "input": "", "output": "Use: nmap -A TARGET\n\nCombines OS detection, version detection, scripts, traceroute."}
+{"instruction": "How do I use nmap to scan UDP ports?", "input": "", "output": "Use: nmap -sU TARGET\n\nUDP scan is slow, often blocked by firewalls."}
+{"instruction": "How do I use nmap to output all formats?", "input": "", "output": "Use: nmap -oA filename TARGET\n\nSaves output in normal, XML, and grepable formats."}
+{"instruction": "How do I use nmap to increase verbosity?", "input": "", "output": "Use: nmap -v or -vv TARGET\n\nShows more information during scan progress."}
+{"instruction": "How do I use nmap to skip ping check?", "input": "", "output": "Use: nmap -Pn TARGET\n\nAssumes host is up, useful when ICMP blocked."}
+{"instruction": "How do I use nmap to scan specific ports?", "input": "", "output": "Use: nmap -p22,80,443 TARGET\n\nOnly scans specified ports."}
+{"instruction": "How do I use gobuster to directory brute force?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist\n\nDiscovers hidden directories and files."}
+{"instruction": "How do I use gobuster to subdomain enumeration?", "input": "", "output": "Use: gobuster dns -d DOMAIN -w wordlist\n\nFinds subdomains via DNS brute forcing."}
+{"instruction": "How do I use gobuster to vhost enumeration?", "input": "", "output": "Use: gobuster vhost -u URL -w wordlist\n\nDiscovers virtual hosts on target."}
+{"instruction": "How do I use gobuster to add file extensions?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -x php,txt,bak\n\nChecks for files with these extensions."}
+{"instruction": "How do I use gobuster to follow redirects?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -r\n\nFollows HTTP redirects."}
+{"instruction": "How do I use gobuster to hide status codes?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -b 404,403\n\nHides specified status codes from output."}
+{"instruction": "How do I use gobuster to increase threads?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -t 50\n\nUses 50 threads for faster scanning."}
+{"instruction": "How do I use gobuster to add cookies?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -c 'session=xyz'\n\nIncludes cookies in requests."}
+{"instruction": "How do I use gobuster to custom user agent?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -a 'Mozilla/5.0'\n\nSets custom User-Agent header."}
+{"instruction": "How do I use gobuster to output to file?", "input": "", "output": "Use: gobuster dir -u URL -w wordlist -o output.txt\n\nSaves results to file."}
+{"instruction": "How do I use ffuf to basic directory fuzzing?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist\n\nFUZZ keyword replaced with wordlist entries."}
+{"instruction": "How do I use ffuf to parameter fuzzing?", "input": "", "output": "Use: ffuf -u 'URL?param=FUZZ' -w wordlist\n\nFuzzes parameter values."}
+{"instruction": "How do I use ffuf to POST data fuzzing?", "input": "", "output": "Use: ffuf -u URL -X POST -d 'user=FUZZ' -w wordlist\n\nFuzzes POST body data."}
+{"instruction": "How do I use ffuf to filter by size?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist -fs 0\n\nFilters responses by size."}
+{"instruction": "How do I use ffuf to filter by words?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist -fw 1\n\nFilters responses by word count."}
+{"instruction": "How do I use ffuf to recursive fuzzing?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist -recursion\n\nRecursively fuzzes found directories."}
+{"instruction": "How do I use ffuf to match status codes?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist -mc 200,301\n\nOnly shows specified status codes."}
+{"instruction": "How do I use ffuf to add header?", "input": "", "output": "Use: ffuf -u URL/FUZZ -w wordlist -H 'Authorization: Bearer token'\n\nAdds custom header."}
+{"instruction": "How do I use ffuf to virtual host fuzzing?", "input": "", "output": "Use: ffuf -u URL -H 'Host: FUZZ.domain.com' -w wordlist\n\nFuzzes Host header for vhosts."}
+{"instruction": "How do I use ffuf to multiple wordlists?", "input": "", "output": "Use: ffuf -u URL/FUZZ/FUZ2Z -w wordlist:FUZZ -w wordlist2:FUZ2Z\n\nUses multiple fuzz points."}
+{"instruction": "How do I use hydra to SSH brute force?", "input": "", "output": "Use: hydra -l user -P passwords.txt ssh://TARGET\n\nBrute forces SSH with password list."}
+{"instruction": "How do I use hydra to HTTP POST login?", "input": "", "output": "Use: hydra -l admin -P passwords.txt TARGET http-post-form '/login:user=^USER^&pass=^PASS^:F=Failed'\n\nBrute forces HTTP POST login."}
+{"instruction": "How do I use hydra to FTP brute force?", "input": "", "output": "Use: hydra -L users.txt -P passwords.txt ftp://TARGET\n\nBrute forces FTP with user and pass lists."}
+{"instruction": "How do I use hydra to use single password?", "input": "", "output": "Use: hydra -l user -p password123 ssh://TARGET\n\nTests single credential pair."}
+{"instruction": "How do I use hydra to spray password?", "input": "", "output": "Use: hydra -L users.txt -p Summer2024! smb://TARGET\n\nPassword spraying against multiple users."}
+{"instruction": "How do I use hydra to set threads?", "input": "", "output": "Use: hydra -t 4 -l admin -P passwords.txt TARGET ssh\n\nUses 4 parallel connections."}
+{"instruction": "How do I use hydra to verbose output?", "input": "", "output": "Use: hydra -V -l admin -P passwords.txt TARGET ssh\n\nShows each attempt."}
+{"instruction": "How do I use hydra to stop on success?", "input": "", "output": "Use: hydra -f -l admin -P passwords.txt TARGET ssh\n\nStops when valid creds found."}
+{"instruction": "How do I use hydra to RDP brute force?", "input": "", "output": "Use: hydra -l admin -P passwords.txt rdp://TARGET\n\nBrute forces RDP."}
+{"instruction": "How do I use hydra to MySQL brute force?", "input": "", "output": "Use: hydra -l root -P passwords.txt mysql://TARGET\n\nBrute forces MySQL."}
+{"instruction": "How do I use hashcat to crack NTLM?", "input": "", "output": "Use: hashcat -m 1000 hash.txt wordlist.txt\n\nMode 1000 for NTLM hashes."}
+{"instruction": "How do I use hashcat to crack MD5?", "input": "", "output": "Use: hashcat -m 0 hash.txt wordlist.txt\n\nMode 0 for raw MD5."}
+{"instruction": "How do I use hashcat to crack SHA256?", "input": "", "output": "Use: hashcat -m 1400 hash.txt wordlist.txt\n\nMode 1400 for raw SHA256."}
+{"instruction": "How do I use hashcat to use rules?", "input": "", "output": "Use: hashcat -m 0 hash.txt wordlist.txt -r best64.rule\n\nApplies transformation rules."}
+{"instruction": "How do I use hashcat to brute force?", "input": "", "output": "Use: hashcat -m 0 hash.txt -a 3 ?a?a?a?a?a?a\n\nMask attack with 6 chars."}
+{"instruction": "How do I use hashcat to show cracked?", "input": "", "output": "Use: hashcat -m 0 hash.txt --show\n\nShows already cracked hashes."}
+{"instruction": "How do I use hashcat to Kerberos TGS?", "input": "", "output": "Use: hashcat -m 13100 hash.txt wordlist.txt\n\nMode 13100 for Kerberoasting."}
+{"instruction": "How do I use hashcat to NetNTLMv2?", "input": "", "output": "Use: hashcat -m 5600 hash.txt wordlist.txt\n\nMode 5600 for NTLMv2."}
+{"instruction": "How do I use hashcat to hybrid attack?", "input": "", "output": "Use: hashcat -m 0 hash.txt wordlist.txt -a 6 ?d?d?d\n\nWordlist + mask."}
+{"instruction": "How do I use hashcat to set workload?", "input": "", "output": "Use: hashcat -m 0 hash.txt wordlist.txt -w 3\n\nWorkload profile (1-4)."}
+{"instruction": "How do I use john to crack password file?", "input": "", "output": "Use: john hash.txt --wordlist=wordlist.txt\n\nBasic dictionary attack."}
+{"instruction": "How do I use john to show cracked?", "input": "", "output": "Use: john hash.txt --show\n\nShows cracked passwords."}
+{"instruction": "How do I use john to specify format?", "input": "", "output": "Use: john hash.txt --format=Raw-MD5\n\nSpecifies hash format."}
+{"instruction": "How do I use john to incremental mode?", "input": "", "output": "Use: john hash.txt --incremental\n\nBrute force with optimized charset."}
+{"instruction": "How do I use john to use rules?", "input": "", "output": "Use: john hash.txt --wordlist=wordlist.txt --rules\n\nApplies word mangling rules."}
+{"instruction": "How do I use john to crack shadow file?", "input": "", "output": "Use: john /etc/shadow --wordlist=wordlist.txt\n\nCracks Linux password hashes."}
+{"instruction": "How do I use john to crack zip file?", "input": "", "output": "Use: john zip2john file.zip > hash.txt && john hash.txt\n\nExtracts and cracks ZIP password."}
+{"instruction": "How do I use john to resume session?", "input": "", "output": "Use: john --restore=sessionname\n\nResumes previous cracking session."}
+{"instruction": "How do I use john to fork processes?", "input": "", "output": "Use: john hash.txt --fork=4\n\nUses 4 processes."}
+{"instruction": "How do I use john to list formats?", "input": "", "output": "Use: john --list=formats\n\nShows all supported hash formats."}

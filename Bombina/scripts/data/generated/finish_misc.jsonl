@@ -1,0 +1,20 @@
+{"instruction": "Explain difference between red and blue team.", "input": "", "output": "Red team simulates attackers, tests defenses end-to-end. Blue team defends, detects, responds. Purple team combines both for improvement."}
+{"instruction": "Explain CTF vs real pentest.", "input": "", "output": "CTF: defined challenges, clear flags. Pentest: realistic scope, business impact focus, professional reporting required."}
+{"instruction": "Explain bug bounty vs pentest.", "input": "", "output": "Bug bounty: specific scope, public program, per-finding reward. Pentest: comprehensive, time-boxed, fixed fee, full report."}
+{"instruction": "Explain when to stop testing.", "input": "", "output": "Stop when: scope exhausted, time limit reached, client requests, risk of damage, or objectives achieved."}
+{"instruction": "Explain handle finding real malware.", "input": "", "output": "Document, don't interact unnecessarily. Inform client immediately. May indicate prior breach. Consider IR involvement."}
+{"instruction": "Explain test production safely.", "input": "", "output": "Time windows, change management, backups verified, rollback plan, emergency contacts. Minimal invasive testing."}
+{"instruction": "Explain prioritize findings.", "input": "", "output": "CVSS helps but consider: exploitability, business impact, data exposure, compliance. Adjust for context."}
+{"instruction": "Explain retesting best practices.", "input": "", "output": "Verify specific fix. Test for regression. Document confirmation. Update status in report."}
+{"instruction": "Explain handle scope creep.", "input": "", "output": "Document additional requests. Require written approval. Adjust timeline/budget. Protect yourself contractually."}
+{"instruction": "Explain difference between VA and PT.", "input": "", "output": "Vulnerability Assessment identifies issues. Penetration Test exploits to prove impact. PT validates VA findings."}
+{"instruction": "Explain physical penetration testing.", "input": "", "output": "Test: access controls, tailgating, badge cloning, lock picking. Requires specific authorization. Document everything."}
+{"instruction": "Explain social engineering engagement.", "input": "", "output": "Define: targets, methods, success criteria. Phishing, vishing, physical. Report awareness gaps. Train don't shame."}
+{"instruction": "Explain wireless penetration testing.", "input": "", "output": "Capture handshakes, test encryption, rogue AP detection, guest isolation. Document channel and BSSID."}
+{"instruction": "Explain mobile app penetration testing.", "input": "", "output": "Static and dynamic analysis. Check: API security, data storage, authentication, transport security. Use MobSF, Frida."}
+{"instruction": "Explain API penetration testing.", "input": "", "output": "Map endpoints, test auth/authz, injection points, rate limiting, business logic. Use Postman, Burp for testing."}
+{"instruction": "Explain thick client testing.", "input": "", "output": "Analyze: network traffic, local storage, binary. Look for hardcoded creds, insecure protocols, injection points."}
+{"instruction": "Explain source code review tips.", "input": "", "output": "Focus: auth, input validation, crypto usage, dangerous functions. Use SAST tools plus manual review."}
+{"instruction": "Explain container security testing.", "input": "", "output": "Check: image vulnerabilities, runtime config, secrets exposure, escape possibilities, network segmentation."}
+{"instruction": "Explain kubernetes pentest approach.", "input": "", "output": "Enumerate: pods, secrets, RBAC. Test: API access, service accounts, container escapes, network policies."}
+{"instruction": "Explain serverless security testing.", "input": "", "output": "Test: function permissions, event injection, dependency vulnerabilities, environment variables with secrets."}
