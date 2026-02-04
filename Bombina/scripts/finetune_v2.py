@@ -30,15 +30,28 @@ def load_config():
 def check_gpu():
     """Check GPU availability and VRAM."""
     if torch.cuda.is_available():
-        gpu_name = torch.cuda.get_device_name(0)
-        vram = torch.cuda.get_device_properties(0).total_memory / (1024**3)
-        print(f"🎮 GPU: {gpu_name}")
-        print(f"💾 VRAM: {vram:.1f} GB")
-        
-        if vram < 6:
-            print("⚠️  Low VRAM detected. Using aggressive memory optimization.")
-            return "low_vram"
-        return "normal"
+        try:
+            gpu_name = torch.cuda.get_device_name(0)
+            vram = torch.cuda.get_device_properties(0).total_memory / (1024**3)
+            capability = torch.cuda.get_device_capability(0)
+            
+            print(f"🎮 GPU: {gpu_name}")
+            print(f"💾 VRAM: {vram:.1f} GB")
+            print(f"📊 CUDA Capability: {capability[0]}.{capability[1]}")
+            
+            # Check if GPU is too old (needs capability 7.0+)
+            if capability[0] < 7:
+                print("⚠️  GPU CUDA capability too low for PyTorch (needs 7.0+)")
+                print("   Falling back to CPU-only training (will be slower)")
+                return "cpu"
+            
+            if vram < 6:
+                print("⚠️  Low VRAM detected. Using aggressive memory optimization.")
+                return "low_vram"
+            return "normal"
+        except Exception as e:
+            print(f"⚠️  GPU detection failed: {e}")
+            return "cpu"
     else:
         print("⚠️  No GPU detected. Training will be slow.")
         return "cpu"
@@ -67,11 +80,16 @@ def format_prompt(example):
 
 def prepare_dataset():
     """Load and prepare training dataset."""
-    training_file = DATA_DIR / "combined_training_data.jsonl"
+    # Try new location first, then fallback
+    training_file = BASE_DIR / "data" / "train.jsonl"
     
     if not training_file.exists():
-        print(f"❌ Training file not found: {training_file}")
-        print("   Run: python curate_dataset.py (option 2) first!")
+        # Fallback to old location
+        training_file = DATA_DIR / "combined_training_data.jsonl"
+    
+    if not training_file.exists():
+        print(f"❌ Training file not found!")
+        print("   Run: python pipeline/combine_datasets.py first!")
         sys.exit(1)
     
     print(f"📂 Loading dataset from {training_file}")
