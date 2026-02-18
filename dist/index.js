@@ -61,15 +61,38 @@ const server = http.createServer((req,res)=>{
         if(existing) existing.qty += 1; else cart.items.push({ id, name, price:Number(price), qty:1 });
         // persist (best-effort)
         try{
-          fs.mkdirSync(DATA_DIR, { recursive: true })
-          fs.writeFileSync(CART_FILE + '.tmp', JSON.stringify({ items: cart.items }), 'utf8')
-          fs.renameSync(CART_FILE + '.tmp', CART_FILE)
+          if (typeof db !== 'undefined' && db) {
+            try {
+              if (existing) db.prepare('UPDATE cart_items SET qty = ? WHERE id = ?').run(existing.qty, id)
+              else db.prepare('INSERT OR REPLACE INTO cart_items (id, name, price, qty) VALUES (?, ?, ?, ?)').run(id, name, Number(price), 1)
+            } catch (err) { console.error('sqlite persistence failed', err) }
+          } else {
+            fs.mkdirSync(DATA_DIR, { recursive: true })
+            fs.writeFileSync(CART_FILE + '.tmp', JSON.stringify({ items: cart.items }), 'utf8')
+            fs.renameSync(CART_FILE + '.tmp', CART_FILE)
+          }
         }catch(e){ console.error('cart persistence failed', e) }
         const total = cart.items.reduce((s,i)=>s+i.qty,0);
         res.writeHead(201,{'Content-Type':'application/json'});
         res.end(JSON.stringify({ total, items: cart.items }));
       });
     }
+
+    if (method === 'DELETE') {
+      // clear cart (testing/dev helper)
+      cart.items.length = 0;
+      try {
+        if (typeof db !== 'undefined' && db) {
+          db.prepare('DELETE FROM cart_items').run()
+        } else {
+          try { fs.unlinkSync(CART_FILE) } catch (e) { }
+        }
+      } catch (err) { console.error('failed to clear cart', err) }
+      res.writeHead(200,{'Content-Type':'application/json'});
+      res.end(JSON.stringify({ total: 0, items: [] }));
+      return;
+    }
+
     res.writeHead(405,{'Content-Type':'application/json'}); res.end(JSON.stringify({ error: 'method not allowed' }));
     return;
   }

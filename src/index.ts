@@ -141,6 +141,23 @@ const server = http.createServer(async (req, res) => {
       return
     }
 
+    if (method === "DELETE") {
+      // clear cart (testing/dev helper)
+      cart.items.length = 0
+      try {
+        if (db) {
+          db.prepare('DELETE FROM cart_items').run()
+        } else {
+          await fs.unlink(CART_FILE).catch(() => {})
+        }
+      } catch (err) {
+        console.error('failed to clear cart', err)
+      }
+      res.writeHead(200, { "Content-Type": "application/json" })
+      res.end(JSON.stringify({ total: 0, items: [] }))
+      return
+    }
+
     res.writeHead(405, { "Content-Type": "application/json" })
     res.end(JSON.stringify({ error: 'method not allowed' }))
     return

@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test'
 
 test('cart persists after reload', async ({ page }) => {
+  await page.request.delete('/api/cart')
   await page.goto('/')
   const count = page.locator('.cart-count')
   await expect(count).toHaveText('0')
