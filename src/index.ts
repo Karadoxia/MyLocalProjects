@@ -137,7 +137,7 @@ const server = http.createServer(async (req, res) => {
         if (existing) existing.qty += 1
         else cart.items.push({ id, name, price: Number(price), qty: 1 })
 
-        // persist (choose SQLite if available, otherwise JSON file)
+        // persist (choose sql.js if available, otherwise JSON file)
         if (db) {
           try {
             if (existing) {
@@ -145,8 +145,18 @@ const server = http.createServer(async (req, res) => {
             } else {
               db.prepare('INSERT OR REPLACE INTO cart_items (id, name, price, qty) VALUES (?, ?, ?, ?)').run(id, name, Number(price), 1)
             }
+            // if running with sql.js, export binary DB immediately
+            try {
+              if (typeof (db as any).export === 'function') {
+                const exported = (db as any).export()
+                await fs.mkdir(DATA_DIR, { recursive: true })
+                await fs.writeFile(CART_FILE, Buffer.from(exported))
+              }
+            } catch (err) {
+              console.error('sql.js persistence failed', err)
+            }
           } catch (err) {
-            console.error('sqlite persistence failed', err)
+            console.error('db persistence failed', err)
           }
         } else {
           try {
@@ -258,12 +268,13 @@ const server = http.createServer(async (req, res) => {
       fsSync.copyFileSync(src, CART_FILE)
 
       // reload into memory (JSON or sql.js)
-      if (db && typeof db.import === 'function') {
-        const buf = fsSync.readFileSync(CART_FILE)
+      if (USE_SQLJS) {
         try {
-          // sql.js: load binary DB
+          const initSqlJs = require('sql.js')
+          const SQL = await initSqlJs()
+          const buf = fsSync.readFileSync(CART_FILE)
           const uint8 = new Uint8Array(buf)
-          db = new (require('sql.js'))().Database(uint8)
+          db = new SQL.Database(uint8)
           const stmt = db.prepare('SELECT id, name, price, qty FROM cart_items')
           const items: any[] = []
           while (stmt.step()) { const r = stmt.getAsObject(); items.push({ id: r.id, name: r.name, price: Number(r.price), qty: Number(r.qty) }) }
@@ -292,6 +303,15 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  if (url === "/health") {
+    res.writeHead(200, { "Content-Type": "text/plain" })
+    res.end("ok")
+    return
+  }
+
+  let pathname = decodeURIComponent(url.split("?")[0])
+  if (pathname === "/") pathname = "/index.html"
+  const filePath = path.join(PUBLIC_DIR, pathname)
 
   if (!filePath.startsWith(PUBLIC_DIR)) {
     res.writeHead(400, { "Content-Type": "text/plain" })
@@ -308,6 +328,45 @@ const server = http.createServer(async (req, res) => {
 
   await serveFile(path.join(PUBLIC_DIR, "index.html"), res)
 })
+
+// persist sql.js DB to disk (if available)
+async function persistSqlJsToDisk() {
+  try {
+    if (db && typeof (db as any).export === 'function') {
+      const exported = (db as any).export()
+      await fs.mkdir(DATA_DIR, { recursive: true })
+      await fs.writeFile(CART_FILE, Buffer.from(exported))
+      console.log('sql.js checkpoint written to', CART_FILE)
+    }
+  } catch (err) {
+    console.error('sql.js checkpoint failed', err)
+  }
+}
+
+// periodic checkpoint (only active when sql.js mode enabled)
+const SQLJS_CHECKPOINT_MS = Number(process.env.SQLJS_CHECKPOINT_MS ?? 5000)
+let _checkpointTimer: NodeJS.Timeout | null = null
+if (USE_SQLJS) {
+  _checkpointTimer = setInterval(() => {
+    if (db && typeof (db as any).export === 'function') {
+      persistSqlJsToDisk().catch(err => console.error('checkpoint error', err))
+    }
+  }, SQLJS_CHECKPOINT_MS)
+}
+
+// graceful shutdown: persist DB and exit
+async function gracefulShutdown(signal: string) {
+  console.log(`received ${signal} — performing graceful shutdown`)
+  try {
+    if (_checkpointTimer) clearInterval(_checkpointTimer)
+    await persistSqlJsToDisk()
+  } catch (err) {
+    console.error('error during graceful shutdown', err)
+  }
+  process.exit(0)
+}
+process.on('SIGINT', () => void gracefulShutdown('SIGINT'))
+process.on('SIGTERM', () => void gracefulShutdown('SIGTERM'))
 
 server.listen(PORT, HOST, () => {
   const addr = server.address()
