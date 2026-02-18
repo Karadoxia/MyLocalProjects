@@ -5,19 +5,14 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "start-bg": "PORT=4001 nohup node dist/index.js > server.log 2>&1 & echo $! > server.pid",
-    "dev": "ts-node src/index.ts",
-    "check": "tsc --noEmit",
-    "ci": "npm ci && npm run build",
-    "test": "node --test"
+    "start-bg": "PORT=5002 nohup node dist/index.js > server.log 2>&1 & echo $! > server.pid",
+    "test": "node --test",
+    "test:e2e": "playwright test",
+    "backup-cart": "node scripts/backup-cart.js"
   },
   "devDependencies": {
-    "@types/node": "^25.2.3",
     "typescript": "^5.9.3",
-    "eslint": "^8.45.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "prettier": "^3.0.0",
-    "eslint-config-prettier": "^9.0.0"
+    "@types/node": "^20.6.4",
+    "@playwright/test": "^1.36.0"
   }
 }

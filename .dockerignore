@@ -1,7 +1,0 @@
-node_modules
-dist
-server.log
-server.pid
-.git
-npm-debug.log
-.DS_Store

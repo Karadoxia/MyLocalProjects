@@ -1,4 +1,11 @@
-node_modules/
+# build / runtime
 dist/
-.env
-.DS_Store
+server.log
+server.pid
+
+# runtime data and backups
+data/
+backups/
+
+# test artifacts
+test/*.json
