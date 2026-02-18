@@ -2,6 +2,7 @@ import http from "http"
 import { promises as fs } from "fs"
 import * as fsSync from "fs"
 import path from "path"
+import { fetchOrchestratorPrompt, proxyScrape } from "./agent.js"
 
 const PORT = Number(process.env.PORT ?? 3000)
 const HOST = process.env.HOST || "127.0.0.1"
@@ -198,6 +199,60 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(405, { "Content-Type": "application/json" })
     res.end(JSON.stringify({ error: 'method not allowed' }))
     return
+  }
+
+  // MCP / agent endpoints (dev-friendly with fallbacks)
+  if (url === '/api/agent/prompt' && (req.method === 'GET' || !req.method)) {
+    try {
+      const prompt = await fetchOrchestratorPrompt()
+      res.writeHead(200, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ prompt }))
+      return
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ error: 'failed to load prompt' }))
+      return
+    }
+  }
+
+  if (url === '/api/agent/scrape' && req.method === 'POST') {
+    try {
+      const body = await readJson(req)
+      const u = body && body.url
+      if (!u) { res.writeHead(400, { 'Content-Type': 'application/json' }); res.end(JSON.stringify({ error: 'missing url' })); return }
+      const scraped = await proxyScrape(u)
+      res.writeHead(200, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify(scraped))
+      return
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ error: 'scrape failed' }))
+      return
+    }
+  }
+
+  if (url === '/api/agent/demo' && req.method === 'POST') {
+    try {
+      // demo: create a quick cart item + backup and return both
+      cart.items.push({ id: 'agent-demo', name: 'Agent Demo Item', price: 1.0, qty: 1 })
+      await fs.mkdir(DATA_DIR, { recursive: true })
+      await fs.writeFile(CART_FILE + '.tmp', JSON.stringify({ items: cart.items }), 'utf8')
+      await fs.rename(CART_FILE + '.tmp', CART_FILE)
+
+      // create backup
+      fsSync.mkdirSync(BACKUP_DIR, { recursive: true })
+      const stamp = new Date().toISOString().replace(/[:.]/g, '-')
+      const out = path.join(BACKUP_DIR, `cart-${stamp}.json`)
+      fsSync.copyFileSync(CART_FILE, out)
+
+      res.writeHead(200, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ ok: true, item: 'agent-demo', backup: path.basename(out) }))
+      return
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ error: 'demo failed' }))
+      return
+    }
   }
 
   // metrics endpoint (Prometheus exposition format)
