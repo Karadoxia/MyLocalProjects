@@ -10,6 +10,7 @@ const PUBLIC_DIR = path.resolve(process.cwd(), "public")
 // persistence configuration (overridable by env)
 const DATA_DIR = path.resolve(process.env.DATA_DIR || path.join(process.cwd(), 'data'))
 const CART_FILE = process.env.CART_FILE || path.join(DATA_DIR, 'cart.json')
+const BACKUP_DIR = path.resolve(process.cwd(), 'backups')
 
 const mime: Record<string, string> = {
   ".html": "text/html; charset=utf-8",
@@ -38,22 +39,47 @@ async function serveFile(filePath: string, res: http.ServerResponse) {
 // simple in-memory cart API (server-side) + persisted storage
 const cart: { items: { id: string; name: string; price: number; qty: number }[] } = { items: [] }
 
-// optional SQLite backing (toggle with USE_SQLITE=1)
-const USE_SQLITE = process.env.USE_SQLITE === '1' || process.env.USE_SQLITE === 'true'
+// optional sql.js backing (toggle with USE_SQLJS=1). Falls back to JSON file persistence.
+const USE_SQLJS = process.env.USE_SQLJS === '1' || process.env.USE_SQLJS === 'true'
 let db: any = null
+let sqljsReady = false
 
-if (USE_SQLITE) {
+if (USE_SQLJS) {
   try {
-    const Database = require('better-sqlite3')
-    const DB_FILE = process.env.DB_FILE || path.join(DATA_DIR, 'cart.sqlite')
-    fsSync.mkdirSync(DATA_DIR, { recursive: true })
-    db = new Database(DB_FILE)
-    db.exec('CREATE TABLE IF NOT EXISTS cart_items (id TEXT PRIMARY KEY, name TEXT, price REAL, qty INTEGER)')
-    const rows = db.prepare('SELECT id, name, price, qty FROM cart_items').all()
-    if (Array.isArray(rows)) cart.items = rows.map((r: any) => ({ id: r.id, name: r.name, price: r.price, qty: r.qty }))
+    const initSqlJs: any = require('sql.js')
+    // initialize in background; until ready we fall back to JSON persistence
+    initSqlJs().then((SQL: any) => {
+      try {
+        fsSync.mkdirSync(DATA_DIR, { recursive: true })
+        if (fsSync.existsSync(CART_FILE)) {
+          const buf = fsSync.readFileSync(CART_FILE)
+          db = new SQL.Database(new Uint8Array(buf))
+        } else {
+          db = new SQL.Database()
+          db.run('CREATE TABLE IF NOT EXISTS cart_items (id TEXT PRIMARY KEY, name TEXT, price REAL, qty INTEGER)')
+        }
+
+        // load rows into memory
+        const stmt = db.prepare('SELECT id, name, price, qty FROM cart_items')
+        const items: any[] = []
+        while (stmt.step()) {
+          const r = stmt.getAsObject()
+          items.push({ id: r.id, name: r.name, price: Number(r.price), qty: Number(r.qty) })
+        }
+        stmt.free()
+        cart.items = items
+        sqljsReady = true
+        console.log('sql.js initialized; persisted cart loaded')
+      } catch (err) {
+        console.error('sql.js init failed — falling back to JSON persistence', err)
+        db = null
+        sqljsReady = false
+      }
+    }).catch((e: any) => {
+      console.error('sql.js loader failed', e)
+    })
   } catch (err) {
-    console.error('sqlite init failed — falling back to JSON persistence', err)
-    db = null
+    console.error('sql.js require failed', err)
   }
 } else {
   // load persisted cart (synchronous read to avoid race on startup)
@@ -86,6 +112,7 @@ async function readJson(req: http.IncomingMessage) {
 
 const server = http.createServer(async (req, res) => {
   const url = req.url || "/"
+  console.log(`[req] ${req.method} ${url}`)
 
   // API: /api/cart
   if (url.startsWith("/api/cart")) {
@@ -163,16 +190,108 @@ const server = http.createServer(async (req, res) => {
     return
   }
 
-  if (url === "/health") {
-    res.writeHead(200, { "Content-Type": "text/plain" })
-    res.end("ok")
+  // metrics endpoint (Prometheus exposition format)
+  if (url === '/metrics') {
+    const cartCount = cart.items.reduce((s, i) => s + i.qty, 0)
+    const uniqueItems = cart.items.length
+    const uptime = process.uptime()
+    const body = `# HELP cart_items_total total number of items in cart\n# TYPE cart_items_total gauge\ncart_items_total ${cartCount}\n# HELP cart_unique_items number of unique SKUs in cart\n# TYPE cart_unique_items gauge\ncart_unique_items ${uniqueItems}\n# HELP process_uptime_seconds process uptime in seconds\n# TYPE process_uptime_seconds gauge\nprocess_uptime_seconds ${uptime}\n`
+    res.writeHead(200, { 'Content-Type': 'text/plain; version=0.0.4' })
+    res.end(body)
     return
   }
 
-  let pathname = decodeURIComponent(url.split("?")[0])
-  if (pathname === "/") pathname = "/index.html"
+  // list backups
+  if (url.startsWith('/api/backups') && (req.method === 'GET' || !req.method)) {
+    try {
+      fsSync.mkdirSync(BACKUP_DIR, { recursive: true })
+      const files = fsSync.readdirSync(BACKUP_DIR).filter(f => f.startsWith('cart-')).sort().reverse()
+      res.writeHead(200, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ backups: files }))
+      return
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ error: 'failed to list backups' }))
+      return
+    }
+  }
 
-  const filePath = path.join(PUBLIC_DIR, pathname)
+  // create a backup of the current cart
+  if (url === '/api/backup' && req.method === 'POST') {
+    try {
+      fsSync.mkdirSync(BACKUP_DIR, { recursive: true })
+      // ensure CART_FILE exists for JSON mode, or persist DB first
+      if (db && typeof db.export === 'function') {
+        try {
+          const exported = db.export()
+          fsSync.writeFileSync(CART_FILE, Buffer.from(exported))
+        } catch (err) {
+          console.error('failed to persist sql.js DB before backup', err)
+        }
+      }
+      if (!fsSync.existsSync(CART_FILE)) {
+        // create an empty cart file if missing
+        fsSync.writeFileSync(CART_FILE, JSON.stringify({ items: cart.items }), 'utf8')
+      }
+      const stamp = new Date().toISOString().replace(/[:.]/g, '-')
+      const out = path.join(BACKUP_DIR, `cart-${stamp}.json`)
+      fsSync.copyFileSync(CART_FILE, out)
+      res.writeHead(201, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ backedUp: path.basename(out) }))
+      return
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ error: 'backup failed' }))
+      return
+    }
+  }
+
+  // restore from a named backup (body: { file: "cart-...json" })
+  if (url === '/api/restore' && req.method === 'POST') {
+    try {
+      const body = await readJson(req)
+      const file = body && body.file
+      if (!file) { res.writeHead(400, { 'Content-Type': 'application/json' }); res.end(JSON.stringify({ error: 'missing file' })); return }
+      const src = path.join(BACKUP_DIR, file)
+      if (!fsSync.existsSync(src)) { res.writeHead(404, { 'Content-Type': 'application/json' }); res.end(JSON.stringify({ error: 'not found' })); return }
+      // copy into CART_FILE
+      fsSync.copyFileSync(src, CART_FILE)
+
+      // reload into memory (JSON or sql.js)
+      if (db && typeof db.import === 'function') {
+        const buf = fsSync.readFileSync(CART_FILE)
+        try {
+          // sql.js: load binary DB
+          const uint8 = new Uint8Array(buf)
+          db = new (require('sql.js'))().Database(uint8)
+          const stmt = db.prepare('SELECT id, name, price, qty FROM cart_items')
+          const items: any[] = []
+          while (stmt.step()) { const r = stmt.getAsObject(); items.push({ id: r.id, name: r.name, price: Number(r.price), qty: Number(r.qty) }) }
+          stmt.free()
+          cart.items = items
+        } catch (err) {
+          console.error('restore into sql.js failed', err)
+        }
+      } else {
+        try {
+          const raw = fsSync.readFileSync(CART_FILE, 'utf8')
+          const parsed = JSON.parse(raw || '{}')
+          cart.items = Array.isArray(parsed.items) ? parsed.items : []
+        } catch (err) {
+          console.error('restore failed to parse JSON', err)
+        }
+      }
+
+      res.writeHead(200, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ restored: file }))
+      return
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ error: 'restore failed' }))
+      return
+    }
+  }
+
 
   if (!filePath.startsWith(PUBLIC_DIR)) {
     res.writeHead(400, { "Content-Type": "text/plain" })
