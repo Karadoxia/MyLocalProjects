@@ -5,9 +5,8 @@ FROM node:22-alpine AS builder
 WORKDIR /app
 
 # install build deps
-COPY package*.json tsconfig.json ./
-COPY frontend/package*.json frontend/ || true
-RUN npm ci --omit=dev || true
+COPY package*.json package-lock.json tsconfig.json ./
+RUN npm ci
 
 # copy source and build
 COPY . .
