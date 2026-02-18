@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp -f dist/src/*.js dist/",
     "build:frontend": "vite build",
     "build:all": "npm run build && npm run build:frontend",
     "frontend:dev": "vite",
