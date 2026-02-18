@@ -1,0 +1,12 @@
+# build / runtime
+dist/
+node_modules/
+server.log
+server.pid
+
+# runtime data and backups
+data/
+backups/
+
+# test artifacts
+test/*.json
