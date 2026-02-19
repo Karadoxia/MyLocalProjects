@@ -15,7 +15,8 @@
     "dev": "npm run dev --workspaces",
     "test": "npm run test --workspaces",
     "swarm": "npx tsx scripts/start-swarm.ts",
-    "swarm:prod": "npx pm2 start scripts/start-swarm.ts --name agent-swarm --interpreter npx --interpreter-args tsx"
+    "swarm:daemon": "npx tsx scripts/swarm-daemon.ts",
+    "swarm:prod": "npx pm2 delete agent-swarm || true && npx pm2 start scripts/swarm-daemon.ts --name agent-swarm --interpreter npx --interpreter-args tsx"
   },
   "devDependencies": {
     "turbo": "^1.10.14"
