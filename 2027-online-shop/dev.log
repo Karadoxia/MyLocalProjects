@@ -1,0 +1,144 @@
+nohup: ignoring input
+
+> dev
+> npm run dev --workspaces
+
+npm error Lifecycle script `dev` failed with error:
+npm error workspace api-gateway@0.0.1
+npm error location /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/api-gateway
+npm error Missing script: "dev"
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run --workspace=api-gateway@0.0.1
+
+
+> web@0.1.0 dev
+> next dev
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.53:3000
+
+✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+✓ Ready in 886ms
+Error: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [2m[at onInvalidCandidate (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:1314)][0m
+    [2m[at Te (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:16:36652)][0m
+    [2m[at /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:355][0m
+    [2m[at Rr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:3:1718)][0m
+    [2m[at _ (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:3:1377)][0m
+    [2m[at $e (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:172)][0m
+    [2m[at un (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:38:294)][0m
+    [2m[at process.processTicksAndRejections (node:internal/process/task_queues:105:5)][0m
+    [2m[at async cn (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:38:631)][0m
+    [2m[at async Xr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/dist/index.js:10:3417)][0m
+⨯ ./apps/web/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/app/globals.css:1:1: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [at Input.error (turbopack:///[project]/apps/web/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/apps/web/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/postcss/dist/index.js:10:6911)]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:105:5)]
+    [at async LazyResult.runAsync (turbopack:///[project]/apps/web/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./apps/web/app/globals.css [Client Component Browser]
+    ./apps/web/app/layout.tsx [Server Component]
+
+
+ GET /?id=253cefde-aafc-49b4-9819-ade544dfd539&vscodeBrowserReqId=1771388840526 500 in 3.4s (compile: 3.2s, render: 116ms)
+Error: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [2m[at onInvalidCandidate (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:1314)][0m
+    [2m[at Te (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:16:36652)][0m
+    [2m[at /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:355][0m
+    [2m[at Rr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:3:1718)][0m
+    [2m[at _ (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:3:1377)][0m
+    [2m[at $e (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:172)][0m
+    [2m[at un (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:38:294)][0m
+    [2m[at process.processTicksAndRejections (node:internal/process/task_queues:105:5)][0m
+    [2m[at async cn (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:38:631)][0m
+    [2m[at async Xr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/dist/index.js:10:3417)][0m
+Error: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [2m[at onInvalidCandidate (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:1314)][0m
+    [2m[at Te (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:16:36652)][0m
+    [2m[at /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:355][0m
+    [2m[at Rr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:3:1718)][0m
+    [2m[at _ (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:3:1377)][0m
+    [2m[at $e (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:172)][0m
+    [2m[at un (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:38:294)][0m
+    [2m[at process.processTicksAndRejections (node:internal/process/task_queues:105:5)][0m
+    [2m[at async cn (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:38:631)][0m
+    [2m[at async Xr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/dist/index.js:10:3417)][0m
+Error: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [2m[at onInvalidCandidate (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:1314)][0m
+    [2m[at Te (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:16:36652)][0m
+    [2m[at /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:355][0m
+    [2m[at Rr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:3:1718)][0m
+    [2m[at _ (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:3:1377)][0m
+    [2m[at $e (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:21:172)][0m
+    [2m[at un (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:38:294)][0m
+    [2m[at process.processTicksAndRejections (node:internal/process/task_queues:105:5)][0m
+    [2m[at async cn (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/tailwindcss/dist/lib.js:38:631)][0m
+    [2m[at async Xr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/dist/index.js:10:3417)][0m
+Error: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [2m[at onInvalidCandidate (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/node_modules/tailwindcss/dist/lib.js:21:1314)][0m
+    [2m[at Te (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/node_modules/tailwindcss/dist/lib.js:16:36652)][0m
+    [2m[at /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/node_modules/tailwindcss/dist/lib.js:21:355][0m
+    [2m[at Rr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/node_modules/tailwindcss/dist/lib.js:3:1718)][0m
+    [2m[at _ (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/node_modules/tailwindcss/dist/lib.js:3:1377)][0m
+    [2m[at $e (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/node_modules/tailwindcss/dist/lib.js:21:172)][0m
+    [2m[at un (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/node_modules/tailwindcss/dist/lib.js:38:294)][0m
+    [2m[at process.processTicksAndRejections (node:internal/process/task_queues:105:5)][0m
+    [2m[at async cn (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/node_modules/tailwindcss/dist/lib.js:38:631)][0m
+    [2m[at async Xr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/dist/index.js:10:3417)][0m
+Error: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [2m[at onInvalidCandidate (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:21:1314)][0m
+    [2m[at Te (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:16:36652)][0m
+    [2m[at /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:21:355][0m
+    [2m[at Rr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:3:1718)][0m
+    [2m[at _ (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:3:1377)][0m
+    [2m[at $e (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:21:172)][0m
+    [2m[at un (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:38:294)][0m
+    [2m[at process.processTicksAndRejections (node:internal/process/task_queues:105:5)][0m
+    [2m[at async cn (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:38:631)][0m
+    [2m[at async Xr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/dist/index.js:10:3417)][0m
+Error: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [2m[at onInvalidCandidate (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:21:1314)][0m
+    [2m[at Te (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:16:36652)][0m
+    [2m[at /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:21:355][0m
+    [2m[at Rr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:3:1718)][0m
+    [2m[at _ (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:3:1377)][0m
+    [2m[at $e (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:21:172)][0m
+    [2m[at un (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:38:294)][0m
+    [2m[at process.processTicksAndRejections (node:internal/process/task_queues:105:5)][0m
+    [2m[at async cn (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:38:631)][0m
+    [2m[at async Xr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/dist/index.js:10:3417)][0m
+Error: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [2m[at onInvalidCandidate (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:21:1314)][0m
+    [2m[at Te (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:16:36652)][0m
+    [2m[at /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:21:355][0m
+    [2m[at Rr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:3:1718)][0m
+    [2m[at _ (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:3:1377)][0m
+    [2m[at $e (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:21:172)][0m
+    [2m[at un (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:38:294)][0m
+    [2m[at process.processTicksAndRejections (node:internal/process/task_queues:105:5)][0m
+    [2m[at async cn (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/node_modules/tailwindcss/dist/lib.js:38:631)][0m
+    [2m[at async Xr (/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/node_modules/@tailwindcss/node/dist/index.js:10:3417)][0m
+ GET /?id=253cefde-aafc-49b4-9819-ade544dfd539&vscodeBrowserReqId=1771388840526 200 in 817ms (compile: 382ms, render: 435ms)
+✓ Compiled in 1006ms
+[?25h

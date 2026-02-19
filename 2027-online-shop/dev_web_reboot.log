@@ -1,0 +1,211 @@
+nohup: ignoring input
+
+> web@0.1.0 dev
+> next dev
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.53:3000
+
+✓ Starting...
+✓ Ready in 919ms
+ HEAD / 200 in 2.2s (compile: 1748ms, render: 482ms)
+ GET /?id=412226c7-a2d0-4008-aa63-bda119eb697c&vscodeBrowserReqId=1771394512311 200 in 128ms (compile: 4ms, render: 124ms)
+ HEAD / 200 in 64ms (compile: 3ms, render: 61ms)
+ GET /wishlist 404 in 205ms (compile: 109ms, render: 95ms)
+ HEAD /store 200 in 781ms (compile: 673ms, render: 108ms)
+ HEAD /favorites 200 in 629ms (compile: 561ms, render: 68ms)
+Error: Route "/products/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at ProductPage (app/products/[slug]/page.tsx:24:43)
+  22 |
+  23 | export default function ProductPage({ params }: Props) {
+> 24 |   const product = getProductBySlug(params.slug)
+     |                                           ^
+  25 |   if (!product) notFound()
+  26 |
+  27 |   const [selectedImage, setSelectedImage] = useState(0)
+ HEAD /products/neural-link-v4 404 in 940ms (compile: 824ms, render: 116ms)
+ GET / 200 in 87ms (compile: 3ms, render: 84ms)
+ GET /favorites 200 in 28ms (compile: 5ms, render: 24ms)
+ GET / 200 in 93ms (compile: 3ms, render: 90ms)
+ GET / 200 in 83ms (compile: 3ms, render: 80ms)
+ GET /wishlist 404 in 70ms (compile: 5ms, render: 66ms)
+ GET / 200 in 77ms (compile: 3ms, render: 75ms)
+ GET /checkout 200 in 156ms (compile: 111ms, render: 45ms)
+✓ Compiled in 18ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /checkout 200 in 339ms (compile: 89ms, render: 250ms)
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 162ms
+ GET /checkout 200 in 323ms (compile: 73ms, render: 251ms)
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 118ms
+ GET /checkout 200 in 265ms (compile: 75ms, render: 191ms)
+ GET / 200 in 172ms (compile: 91ms, render: 81ms)
+ GET / 200 in 246ms (compile: 5ms, render: 241ms)
+ GET /favorites 200 in 149ms (compile: 86ms, render: 63ms)
+ GET / 200 in 115ms (compile: 4ms, render: 111ms)
+✓ Compiled in 149ms
+✓ Compiled in 22ms
+ GET / 200 in 326ms (compile: 87ms, render: 239ms)
+ GET /checkout 200 in 153ms (compile: 93ms, render: 61ms)
+ GET /products?category=PERIPHERAL 404 in 26ms (compile: 7ms, render: 19ms)
+ GET /products?category=PERIPHERAL 404 in 67ms (compile: 3ms, render: 64ms)
+ GET /checkout 200 in 159ms (compile: 3ms, render: 157ms)
+ GET /products?category=SYSTEM 404 in 30ms (compile: 5ms, render: 24ms)
+ GET /products?category=SYSTEM 404 in 71ms (compile: 4ms, render: 68ms)
+ GET /checkout 200 in 62ms (compile: 2ms, render: 60ms)
+ GET /contact 200 in 121ms (compile: 84ms, render: 37ms)
+ GET /faq 200 in 405ms (compile: 364ms, render: 41ms)
+ GET /checkout 200 in 16ms (compile: 2ms, render: 14ms)
+ GET /checkout 200 in 21ms (compile: 3ms, render: 19ms)
+ GET /checkout 200 in 23ms (compile: 3ms, render: 20ms)
+ GET /checkout 200 in 23ms (compile: 3ms, render: 20ms)
+ GET /checkout 200 in 26ms (compile: 4ms, render: 22ms)
+ GET /faq 200 in 26ms (compile: 2ms, render: 24ms)
+ GET /faq 200 in 22ms (compile: 2ms, render: 20ms)
+✓ Compiled in 150ms
+✓ Compiled in 114ms
+✓ Compiled in 17ms
+✓ Compiled in 11ms
+✓ Compiled in 10ms
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+✓ Compiled in 30ms
+ GET / 404 in 1332ms (compile: -143175µs, proxy.ts: 1293ms, render: 182ms)
+ GET /faq 404 in 1339ms (compile: -23667µs, proxy.ts: 1325ms, render: 37ms)
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+ GET / 404 in 73ms (compile: -9048µs, proxy.ts: 66ms, render: 17ms)
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+ GET /faq 404 in 91ms (compile: -9000µs, proxy.ts: 60ms, render: 40ms)
+ GET / 404 in 117ms (compile: -8569µs, proxy.ts: 72ms, render: 53ms)
+ GET /faq 404 in 104ms (compile: -8180µs, proxy.ts: 69ms, render: 43ms)
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+ GET / 404 in 233ms (compile: -7585µs, proxy.ts: 223ms, render: 17ms)
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+ GET / 404 in 214ms (compile: -9344µs, proxy.ts: 181ms, render: 43ms)
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+ GET / 404 in 165ms (compile: -8250µs, proxy.ts: 87ms, render: 86ms)
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+ GET / 404 in 148ms (compile: -7792µs, proxy.ts: 119ms, render: 37ms)
+ GET / 404 in 190ms (compile: -7149µs, proxy.ts: 101ms, render: 96ms)
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+⨯ [Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.]
+✓ Compiled in 2.5s
+⨯ Error: @clerk/clerk-react: Missing publishableKey. You can get your key at https://dashboard.clerk.com/last-active?path=api-keys.
+    at ignore-listed frames {
+  digest: '2820894134'
+}
+ GET /faq 500 in 1719ms (compile: 876ms, proxy.ts: 10ms, render: 833ms)
+
+[35m
+[Clerk]:[0m You are running in keyless mode.
+You can [35mclaim your keys[0m by visiting https://dashboard.clerk.com/apps/claim?token=67lfneb4oz48htotd3tvdaqn4l4w8u9myidj7fgo&return_url=http%3A%2F%2Flocalhost%3A3000%2F
+
+ GET / 200 in 210ms (compile: 4ms, proxy.ts: 5ms, render: 201ms)
+ GET / 200 in 3.1s (compile: 557ms, proxy.ts: 16ms, render: 2.5s)
+ POST / 200 in 28ms (compile: 7ms, proxy.ts: 8ms, render: 14ms)
+ GET / 200 in 106ms (compile: 4ms, proxy.ts: 19ms, render: 82ms)
+ POST / 303 in 142ms (compile: 3ms, proxy.ts: 4ms, render: 135ms)
+ POST / 200 in 19ms (compile: 3ms, proxy.ts: 9ms, render: 7ms)
+ POST / 200 in 20ms (compile: 4ms, proxy.ts: 8ms, render: 9ms)
+ GET / 200 in 53ms (compile: 3ms, proxy.ts: 8ms, render: 42ms)
+✓ Compiled in 758ms
+✓ Compiled in 8ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⨯ Error: Module [project]/apps/web/node_modules/next/dist/esm/client/components/layout-router.js [app-ssr] (ecmascript) was instantiated because it was required from module [project]/apps/web/node_modules/next/dist/esm/build/templates/app-page.js?page=/page { GLOBAL_ERROR_MODULE => "[project]/apps/web/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/apps/web/app/favicon.ico.mjs { IMAGE => \"[project]/apps/web/app/favicon.ico (static in ecmascript, tag client)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/apps/web/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/apps/web/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/apps/web/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/apps/web/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/apps/web/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/apps/web/app/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>, but the module factory is not available.
+    at ignore-listed frames {
+  digest: '1843543542'
+}
+ GET /faq 500 in 1880ms (compile: 476ms, proxy.ts: 11ms, render: 1394ms)
+ GET / 200 in 1849ms (compile: 943ms, proxy.ts: 73ms, render: 833ms)
+ GET / 200 in 1823ms (compile: 774ms, proxy.ts: 118ms, render: 930ms)
+ GET / 200 in 305ms (compile: 5ms, proxy.ts: 18ms, render: 282ms)
+ GET / 200 in 272ms (compile: 5ms, proxy.ts: 11ms, render: 257ms)
+ GET / 200 in 237ms (compile: 7ms, proxy.ts: 26ms, render: 204ms)
+ GET / 200 in 194ms (compile: 7ms, proxy.ts: 25ms, render: 162ms)
+ GET / 200 in 258ms (compile: 9ms, proxy.ts: 17ms, render: 232ms)
+ POST /faq 200 in 24ms (compile: 7ms, proxy.ts: 6ms, render: 12ms)
+ GET / 200 in 302ms (compile: 6ms, proxy.ts: 14ms, render: 282ms)
+ GET / 200 in 1281ms (compile: 8ms, proxy.ts: 22ms, render: 1251ms)
+ GET / 200 in 1249ms (compile: 5ms, proxy.ts: 16ms, render: 1228ms)
+ GET / 200 in 1212ms (compile: 5ms, proxy.ts: 19ms, render: 1188ms)
+ GET / 200 in 1177ms (compile: 4ms, proxy.ts: 17ms, render: 1156ms)
+ GET /faq 200 in 89ms (compile: 5ms, proxy.ts: 10ms, render: 75ms)
+ POST /faq 303 in 131ms (compile: 4ms, proxy.ts: 9ms, render: 118ms)
+ GET /faq 200 in 33ms (compile: 3ms, proxy.ts: 8ms, render: 22ms)

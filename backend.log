@@ -1,0 +1,28 @@
+nohup: ignoring input
+
+> nexus-backend@1.0.0 start
+> node dist/index.js
+
+[DB] Initializing SQLite at /home/redbend/Desktop/00-Projects/2027-Bombishop/data/nexus.db
+[Backend] Database initialized
+{"level":30,"time":1771387429994,"pid":208745,"hostname":"openclaw","msg":"Server listening at http://0.0.0.0:3001"}
+[Backend] Listening on port 3001
+{"level":30,"time":1771387439708,"pid":208745,"hostname":"openclaw","reqId":"req-1","req":{"method":"GET","url":"/api/cart","hostname":"localhost:3001","remoteAddress":"127.0.0.1","remotePort":46268},"msg":"incoming request"}
+{"level":30,"time":1771387439712,"pid":208745,"hostname":"openclaw","reqId":"req-1","res":{"statusCode":200},"responseTime":4.291629999876022,"msg":"request completed"}
+{"level":30,"time":1771387447902,"pid":208745,"hostname":"openclaw","reqId":"req-2","req":{"method":"POST","url":"/api/cart","hostname":"localhost:3001","remoteAddress":"127.0.0.1","remotePort":34496},"msg":"incoming request"}
+{"level":30,"time":1771387447907,"pid":208745,"hostname":"openclaw","reqId":"req-2","res":{"statusCode":201},"responseTime":4.044614002108574,"msg":"request completed"}
+{"level":30,"time":1771387449211,"pid":208745,"hostname":"openclaw","reqId":"req-3","req":{"method":"POST","url":"/api/cart","hostname":"localhost:3001","remoteAddress":"127.0.0.1","remotePort":34504},"msg":"incoming request"}
+{"level":30,"time":1771387449213,"pid":208745,"hostname":"openclaw","reqId":"req-3","res":{"statusCode":201},"responseTime":1.550036996603012,"msg":"request completed"}
+{"level":30,"time":1771387456499,"pid":208745,"hostname":"openclaw","reqId":"req-4","req":{"method":"POST","url":"/api/cart","hostname":"localhost:3001","remoteAddress":"127.0.0.1","remotePort":50682},"msg":"incoming request"}
+{"level":30,"time":1771387456500,"pid":208745,"hostname":"openclaw","reqId":"req-4","res":{"statusCode":201},"responseTime":0.8764190003275871,"msg":"request completed"}
+{"level":30,"time":1771387593006,"pid":208745,"hostname":"openclaw","reqId":"req-5","req":{"method":"GET","url":"/api/cart","hostname":"localhost:3001","remoteAddress":"127.0.0.1","remotePort":34312},"msg":"incoming request"}
+{"level":30,"time":1771387593008,"pid":208745,"hostname":"openclaw","reqId":"req-5","res":{"statusCode":200},"responseTime":0.8111919984221458,"msg":"request completed"}
+{"level":30,"time":1771387593181,"pid":208745,"hostname":"openclaw","reqId":"req-6","req":{"method":"POST","url":"/api/cart","hostname":"localhost:3001","remoteAddress":"127.0.0.1","remotePort":34328},"msg":"incoming request"}
+{"level":30,"time":1771387593183,"pid":208745,"hostname":"openclaw","reqId":"req-6","res":{"statusCode":201},"responseTime":1.8569319993257523,"msg":"request completed"}
+{"level":30,"time":1771390610367,"pid":208745,"hostname":"openclaw","reqId":"req-7","req":{"method":"HEAD","url":"/","hostname":"localhost:3001","remoteAddress":"127.0.0.1","remotePort":41668},"msg":"incoming request"}
+{"level":30,"time":1771390610368,"pid":208745,"hostname":"openclaw","reqId":"req-7","msg":"Route HEAD:/ not found"}
+{"level":30,"time":1771390610369,"pid":208745,"hostname":"openclaw","reqId":"req-7","res":{"statusCode":404},"responseTime":1.2826680019497871,"msg":"request completed"}
+{"level":30,"time":1771390627314,"pid":208745,"hostname":"openclaw","reqId":"req-8","req":{"method":"GET","url":"/","hostname":"localhost:3001","remoteAddress":"127.0.0.1","remotePort":35524},"msg":"incoming request"}
+{"level":30,"time":1771390627314,"pid":208745,"hostname":"openclaw","reqId":"req-8","msg":"Route GET:/ not found"}
+{"level":30,"time":1771390627315,"pid":208745,"hostname":"openclaw","reqId":"req-8","res":{"statusCode":404},"responseTime":0.4867810010910034,"msg":"request completed"}
+Killed

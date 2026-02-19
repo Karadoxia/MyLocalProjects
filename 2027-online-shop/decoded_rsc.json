@@ -1,0 +1,337 @@
+6:I["[project]/apps/web/node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_next_dist_ce785a59._.js","/_next/static/chunks/apps_web_app_favicon_ico_mjs_73647b8e._.js"],"SegmentViewNode"]
+8:"$Sreact.fragment"
+2a:I["[project]/apps/web/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_next_dist_ce785a59._.js","/_next/static/chunks/apps_web_app_favicon_ico_mjs_73647b8e._.js"],"OutletBoundary"]
+2c:"$Sreact.suspense"
+35:I["[project]/apps/web/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_next_dist_ce785a59._.js","/_next/static/chunks/apps_web_app_favicon_ico_mjs_73647b8e._.js"],"ViewportBoundary"]
+3c:I["[project]/apps/web/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_next_dist_ce785a59._.js","/_next/static/chunks/apps_web_app_favicon_ico_mjs_73647b8e._.js"],"MetadataBoundary"]
+42:I["[project]/apps/web/node_modules/next/dist/client/components/builtin/global-error.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_next_dist_client_components_builtin_global-error_62f480df.js"],"default"]
+47:I["[project]/apps/web/node_modules/@clerk/nextjs/dist/esm/app-router/client/ClerkProvider.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_%40clerk_nextjs_dist_esm_app-router_0b179f98._.js","/_next/static/chunks/5bcb1_f884679b._.js","/_next/static/chunks/apps_web_16c3f6a4._.js","/_next/static/chunks/apps_web_app_layout_tsx_62f480df._.js"],"ClientClerkProvider"]
+4b:I["[project]/apps/web/node_modules/next/dist/client/components/layout-router.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_next_dist_ce785a59._.js","/_next/static/chunks/apps_web_app_favicon_ico_mjs_73647b8e._.js"],"default"]
+4d:I["[project]/apps/web/node_modules/next/dist/client/components/render-from-template-context.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_next_dist_ce785a59._.js","/_next/static/chunks/apps_web_app_favicon_ico_mjs_73647b8e._.js"],"default"]
+5c:I["[project]/apps/web/components/cart-drawer.tsx [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_%40clerk_nextjs_dist_esm_app-router_0b179f98._.js","/_next/static/chunks/5bcb1_f884679b._.js","/_next/static/chunks/apps_web_16c3f6a4._.js","/_next/static/chunks/apps_web_app_layout_tsx_62f480df._.js"],"CartDrawer"]
+68:"$Sreact.forward_ref"
+6d:I["[project]/apps/web/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_%40clerk_nextjs_dist_esm_app-router_0b179f98._.js","/_next/static/chunks/5bcb1_f884679b._.js","/_next/static/chunks/apps_web_16c3f6a4._.js","/_next/static/chunks/apps_web_app_layout_tsx_62f480df._.js"],""]
+76:"$Sreact.forward_ref"
+85:"$Sreact.forward_ref"
+93:"$Sreact.forward_ref"
+e4:I["[project]/apps/web/components/agent-widget.tsx [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_%40clerk_nextjs_dist_esm_app-router_0b179f98._.js","/_next/static/chunks/5bcb1_f884679b._.js","/_next/static/chunks/apps_web_16c3f6a4._.js","/_next/static/chunks/apps_web_app_layout_tsx_62f480df._.js"],"AgentWidget"]
+e9:I["[project]/apps/web/node_modules/next/dist/lib/metadata/generate/icon-mark.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_next_dist_ce785a59._.js","/_next/static/chunks/apps_web_app_favicon_ico_mjs_73647b8e._.js"],"IconMark"]
+:HL["/_next/static/chunks/%5Broot-of-the-server%5D__93ed2a11._.css","style"]
+:HL["/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:N1771398284728.9592
+3:"$EObject.defineProperty(()=\u003e{ctx.componentMod.preloadStyle(fullHref,ctx.renderOpts.crossOrigin,ctx.nonce)},\\"name\\",{value:\\"\\"})"
+4:"$EObject.defineProperty(()=\u003e{ctx.componentMod.preloadFont(href,type,ctx.renderOpts.crossOrigin,ctx.nonce)},\\"name\\",{value:\\"\\"})"
+2:{"name":"Preloads","key":null,"env":"Server","stack":[],"props":{"preloadCallbacks":["$3","$4"]}}
+5:[]
+7:[]
+9:[["Array.map","",0,0
+,0,0,false]]
+a:[["Array.map","",0,0,0,0,false]]
+b:[["Array.map","",0,0,0,0,false]]
+c:[["Array.map","",0,0,0,0,false]]
+d:[["Array.map","",0,0,0,0,false]]
+10:I["[project]/apps/web/node_modules/next/dist/client/components/layout-router.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_next_dist_ce785a59._.js","/_next/static/chunks/apps_web_app_favicon_ico_mjs_73647b8e._.js"],"default"]
+13:I["[project]/apps/web/node_modules/next/dist/client/components/render-from-template-context.js [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_next_dist_ce785a59._.js","/_next/static/chunks/apps_web_app_favicon_ico_mjs_73647b8e._.js"],"default"]
+14:{}
+15:[["Function.all","",0,0,0,0,true]]
+12:{"children":["$","$L13",null,"$14",null,"$15",1]}
+16:[["Function.all","",0,0,0,0,true]]
+11:{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$8",null,"$12",null,"$16",0],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$Y","forbidden":"$undefined","unauthorized":"$undefined","segmentViewBoundaries":"$Y"}
+17:[["Function.all","",0,0,0,0,true]]
+f:{"name":"RootLayout","key":null,"env":"Server","stack":[],"props":{"children":["$","$L10",null,"$11",null,"$17",1],"params":"$Y"}}
+1b:I["[project]/apps/web/components/cart-drawer.tsx [app-client] (ecmascript)",["/_next/static/chunks/5bcb1_%40clerk_nextjs_dist_esm_app-router_0b179f98._.js","/_next/static/chunks/5bcb1_f884679b._.js","/_next/static/chunks/apps_web_16c3f6a4._.js","/_next/static/chunks/apps_web_app_layout_tsx_62f480df._.js"],"CartDrawer"]
+1c:{}
+1d:[["RootLayout","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",584,287,575,1,false]]
+1a:{"className":"inter_5972bc34-module__OU16Qa__className","children":["$f:props:children",["$","$L1b",null,"$1c","$f","$1d",1],"$Y","$Y"]}
+1e:[["RootLayout","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",580,289,575,1,false]]
+19:{"lang":"en","className":"dark","children":["$","body",null,"$1a","$f","$1e",1]}
+1f:[["RootLayout","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",577,285,575,1,false]]
+18:{"name":"ClerkProvider","key":null,"env":"Server","owner":"$f","stack":[["RootLayout","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",576,278,575,1,false]],"props":{"children":["$","html",null,"$19","$f","$1f",1]}}
+20:[["Function.all","",0,0,0,0,true]]
+21:[["Function.all","",0,0,0,0,true]]
+23:{"name":"Home","key":null,"env":"Server","stack":[["Function.all","",0,0,0,0,true]],"props":{"params":"$@24","searchParams":"$@25"}}
+26:[["Home","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__c8bdb0a4._.js",26,278,25,1,false]]
+28:{"name":"Next.MetadataOutlet","key":null,"env":"Server","stack":[["Function.all","",0,0,0,0,true]],"props":{}}
+29:[]
+2b:[]
+2e:[]
+
+31:"$EObject.defineProperty(function(type,config,children){for(var propName,i=2;i\u003carguments.length;i++)validateChildKeys(arguments[i]);i={};var key=null;if(null!=config)for(propName in didWarnAboutOldJSXRuntime||!(\\"__self\\"in config)||\\"key\\"in config||(didWarnAboutOldJSXRuntime=!0,console.warn(\\"Your app (or one of its dependencies) is using an outdated JSX transform. Update to the modern JSX transform for faster performance: https://react.dev/link/new-jsx-transform\\")),hasValidKey(config)\u0026\u0026(checkKeyStringCoercion(config.key),key=\\"\\"+config.key),config)hasOwnProperty.call(config,propName)\u0026\u0026\\"key\\"!==propName\u0026\u0026\\"__self\\"!==propName\u0026\u0026\\"__source\\"!==propName\u0026\u0026(i[propName]=config[propName]);var childrenLength=arguments.length-2;if(1===childrenLength)i.children=children;else if(1\u003cchildrenLength){for(var childArray=Array(childrenLength),_i=0;_i\u003cchildrenLength;_i++)childArray[_i]=arguments[_i+2];Object.freeze\u0026\u0026Object.freeze(childArray),i.children=childArray}if(type\u0026\u0026type.defaultProps)for(propName in childrenLength=type.defaultProps)void 0===i[propName]\u0026\u0026(i[propName]=childrenLength[propName]);return key\u0026\u0026function(props,displayName){function warnAboutAccessingKey(){specialPropKeyWarningShown||(specialPropKeyWarningShown=!0,console.error(\\"%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)\\",displayName))}warnAboutAccessingKey.isReactWarning=!0,Object.defineProperty(props,\\"key\\",{get:warnAboutAccessingKey,configurable:!0})}(i,\\"function\\"==typeof type?type.displayName||type.name||\\"Unknown\\":type),(propName=1e4\u003eReactSharedInternals.recentlyCreatedOwnerStacks++)?(childArray=Error.stackTraceLimit,Error.stackTraceLimit=10,childrenLength=Error(\\"react-stack-top-frame\\"),Error.stackTraceLimit=childArray):childrenLength=unknownOwnerDebugStack,ReactElement(type,key,i,getOwner(),childrenLength,propName?createTask(getTaskName(type)):unknownOwnerDebugTask)},\\"name\\",{value:\\"\\"})"
+
+30:{"name":"NonIndex","key":null,"env":"Server","stack":[],"props":{"createElement":"$31","pagePath":"/","statusCode":200,"isPossibleServerAction":false}}
+33:{"name":"ViewportWrapper","key":null,"env":"Server","stack":[],"props":{}}
+34:[]
+37:{"name":"Next.Viewport","key":null,"env":"Server","owner":"$33","stack":[],"props":{}}
+39:{"name":"MetadataWrapper","key":null,"env":"Server","stack":[],"props":{}}
+3a:[]
+3b:[]
+3d:[]
+3f:{"name":"Next.Metadata","key":null,"env":"Server","owner":"$39","stack":[],"props":{}}
+40:[]
+43:[]
+24:{}
+25:
+44:[]
+45:[]
+46:[["ClerkProvider","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",18895,258,18858,1,false]]
+48:[["RootLayout","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",577,285,575,1,false]]
+49:[["RootLayout","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",580,289,575,1,false]]
+4a:[["Function.all","",0,0,0,0,true]]
+4c:[["Function.all","",0,0,0,0,true]]
+4e:[]
+50:{"name":"NotFound","key":null,"env":"Server","stack":[],"props":{}}
+51:{"name":"HTTPAccessErrorFallback","key":null,"env":"Server","owner":"$50","stack":[],"props":{"status":404,"message":"This page could not be found."}}
+52:[]
+53:[]
+54:[]
+55:[]
+56:[]
+57:[]
+58:[]
+59:[["Function.all","",0,0,0,0,true]]
+5a:[["Function.all","",0,0,0,0,true]]
+5b:[["RootLayout","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",584,287,575,1,false]]
+5e:{"name":"Footer","key":null,"env":"Server","owner":"$f","stack":[["RootLayout","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",589,287,575,1,false]],"props":{}}
+5f:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",82,278,81,1,false]]
+60:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",85,279,81,1,false]]
+61:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",88,287,81,1,false]]
+62:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",91,295,81,1,false]]
+63:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",99,295,81,1,false]]
+64:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",107,295,81,1,false]]
+69:"$EObject.defineProperty(({ className, ...props }, ref)=\u003e(0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__[\\"createElement\\\
+utils$2f$toPascalCase$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__[\\"toPascalCase\\\
+f-the-server]__88013a47._.js",128,317,81,1,false]],"props":"$78"}
+7d:{"name":"","key":null,"env":"Server","owner":"$7c","stack":[["Linkedin","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",261,521,261,255,false]],"props":{"ref":"$undefined","iconNode":[["path",{"d":"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z","key":"c2jq9f"}],["rect",{"width":"4","height":"12","x":"2","y":"9","key":"mk3on5"}],["circle",{"cx":"4","cy":"4","r":"2","key":"bt5ra8"}]],"className":"lucide-linkedin","size":20}}
+7e:[["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",217,609,217,246,false]]
+7f:[["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,275,230,25,false],["Array.map","",0,0,0,0,false],["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,21,217,246,false]]
+80:[["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,275,230,25,false],["Array.map","",0,0,0,0,false],["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,21,217,246,false]]
+81:[["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,275,230,25,false],["Array.map","",0,0,0,0,false],["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,21,217,246,false]]
+86:"$EObject.defineProperty(({ className, ...props }, ref)=\u003e(0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__[\\"createElement\\\
+ddb9e._.js",261,521,261,255,false]],"props":{"ref":"$undefined","iconNode":[["circle",{"cx":"12","cy":"12","r":"10","key":"1mglay"}],["circle",{"cx":"12","cy":"12","r":"2","key":"1c9p78"}]],"className":"lucide-disc","size":20}}
+8d:[["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",217,609,217,246,false]]
+8e:[["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,275,230,25,false],["Array.map","",0,0,0,0,false],["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,21,217,246,false]]
+8f:[["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,275,230,25,false],["Array.map","",0,0,0,0,false],["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,21,217,246,false]]
+94:"$EObject.defineProperty(({ className, ...props }, ref)=\u003e(0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__[\\"createElement\\\
+r/chunks/ssr/5bcb1_25bddb9e._.js",230,275,230,25,false],["Array.map","",0,0,0,0,false],["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,21,217,246,false]]
+9d:[["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,275,230,25,false],["Array.map","",0,0,0,0,false],["","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/5bcb1_25bddb9e._.js",230,21,217,246,false]]
+9e:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",182,287,81,1,false]]
+9f:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",185,295,81,1,false]]
+a0:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",193,295,81,1,false]]
+a1:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",196,303,81,1,false]]
+a3:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",197,317,81,1,false]],"props":{"href":"/products?category=PERIPHERAL","className":"hover:text-cyan-400","children":"Peripherals"}}
+a4:[]
+a5:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",211,303,81,1,false]]
+a7:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",212,317,81,1,false]],"props":{"href":"/products?category=LAPTOP","className":"hover:text-cyan-400","children":"Laptops"}}
+a8:[]
+a9:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",226,303,81,1,false]]
+ab:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",227,317,81,1,false]],"props":{"href":"/products?category=SYSTEM","className":"hover:text-cyan-400","children":"Workstations"}}
+ac:[]
+ad:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",241,303,81,1,false]]
+af:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",242,317,81,1,false]],"props":{"href":"/products?category=NETWORK","className":"hover:text-cyan-400","children":"Networking"}}
+b0:[]
+b1:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",268,287,81,1,false]]
+b2:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",271,295,81,1,false]]
+b3:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",279,295,81,1,false]]
+b4:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",282,303,81,1,false]]
+b6:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-
+server]__88013a47._.js",283,317,81,1,false]],"props":{"href":"/about","className":"hover:text-cyan-400","children":"About Us"}}
+b7:[]
+b8:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",297,303,81,1,false]]
+ba:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",298,317,81,1,false]],"props":{"href":"/business","className":"hover:text-cyan-400","children":"Business"}}
+bb:[]
+bc:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",312,303,81,1,false]]
+be:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",313,317,81,1,false]],"props":{"href":"#","className":"hover:text-cyan-400","children":"Careers"}}
+bf:[]
+c0:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",327,303,81,1,false]]
+c2:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",328,317,81,1,false]],"props":{"href":"#","className":"hover:text-cyan-400","children":"Blog"}}
+c3:[]
+c4:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",354,287,81,1,false]]
+c5:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",357,295,81,1,false]]
+c6:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",365,295,81,1,false]]
+c7:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",368,303,81,1,false]]
+c9:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",369,317,81,1,false]],"props":{"href":"/contact","className":"hover:text-cyan-400","children":"Contact"}}
+ca:[]
+cb:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",383,303,81,1,false]]
+cd:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",384,317,81,1,false]],"props":{"href":"/faq","className":"hover:text-cyan-400","children":"FAQ"}}
+ce:[]
+cf:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",398,303,81,1,false]]
+d1:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",399,317,81,1,false]],"props":{"href":"#","className":"hover:text-cyan-400","children":"Returns"}}
+d2:[]
+d3:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",413,303,81,1,false]]
+d5:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",414,317,81,1,false]],"props"
+:{"href":"#","className":"hover:text-cyan-400","children":"Track Order"}}
+d6:[]
+d7:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",446,279,81,1,false]]
+d8:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",449,287,81,1,false]]
+d9:[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",457,287,81,1,false]]
+db:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",460,295,81,1,false]],"props":{"href":"#","className":"hover:text-cyan-400","children":"Privacy Policy"}}
+dc:[]
+de:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",469,295,81,1,false]],"props":{"href":"#","className":"hover:text-cyan-400","children":"Terms of Service"}}
+df:[]
+e1:{"name":"LinkComponent","key":null,"env":"Server","owner":"$5e","stack":[["Footer","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",478,295,81,1,false]],"props":{"href":"#","className":"hover:text-cyan-400","children":"Cookie Policy"}}
+e2:[]
+e3:[["RootLayout","/home/redbend/Desktop/00-Projects/new-project/2027-online-shop/apps/web/.next/dev/server/chunks/ssr/[root-of-the-server]__88013a47._.js",594,287,575,1,false]]
+e5:[]
+e6:[]
+e7:[["Array.map","",0,0,0,0,false]]
+e8:[]
+1:D{"time":0.49912899999617366}
+1:D"$2"
+1:D{"time":0.702170999997179}
+1:null
+e:D{"time":1.6898240000009537}
+e:D"$f"
+e:D{"time":2.03659499999776}
+e:D"$18"
+22:D{"time":3.359627999998338}
+22:D"$23"
+22:D{"time":3.452123000002757}
+22:["$","div",null,{"style":{"padding":"100px","background":"red","color":"white","fontSize":"48px"},"children":"TOP LEVEL HOME PAGE READY"},"$23","$26",1]
+27:D{"time":3.605952999998408}
+27:D"$28"
+27:D{"time":5.452626999998756}
+27:["$","$L2a",null,{"children":["$","$2c",null,{"name":"Next.MetadataOutlet","children":"$@2d"},"$28","$2b",1]},"$28","$29",1]
+2f:D{"time":5.955041000001074}
+2f:D"$30"
+2f:D{"time":5.96698699999979}
+2f:null
+32:D{"time":6.054613000000245}
+32:D"$33"
+32:D{"time":6.141518999997061}
+36:D{"time":6.245644000002358}
+36:D"$37"
+32:["$","$L35",null,{"children":"$L36"},"$33","$34",1]
+38:D{"time":6.774830000002112}
+38:D"$39"
+38:D{"time":6.893942000002426}
+3e:D{"time":7.045939999996335}
+3e:D"$3f"
+38:["$","div",null,{"hidden":true,"children":["$","$L3c",null,{"children":["$","$2c",null,{"name":"Next.Metadata","children":"$L3e"},"$39","$3d",1]},"$39","$3b",1]},"$39","$3a",1]
+41:[]
+
+0:{"P":"$1","b":"development","c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],[["$","$L6","layout",{"type":"layout","pagePath":"/apps/web/app/layout.tsx","children":["$","$8","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/%5Broot-of-the-server%5D__93ed2a11._.css","precedence":"next_static/chunks/[root-of-the-server]__93ed2a11._.css","crossOrigin":"$undefined","nonce":"$undefined"},null,"$9",0],["$","script","script-0",{"src":"/_next/static/chunks/5bcb1_%40clerk_nextjs_dist_esm_app-router_0b179f98._.js","async":true,"nonce":"$undefined"},null,"$a",0],["$","script","script-1",{"src":"/_next/static/chunks/5bcb1_f884679b._.js","async":true,"nonce":"$undefined"},null,"$b",0],["$","script","script-2",{"src":"/_next/static/chunks/apps_web_16c3f6a4._.js","async":true,"nonce":"$undefined"},null,"$c",0],["$","script","script-3",{"src":"/_next/static/chunks/apps_web_app_layout_tsx_62f480df._.js","async":true,"nonce":"$undefined"},null,"$d",0]],"$Le"]},null,"$7",1]},null,"$5",0],{"children":[["$","$8","c",{"children":[["$","$L6","c-page",{"type":"page","pagePath":"/apps/web/app/page.tsx","children":"$22"},null,"$21",1],null,"$27"]},null,"$20",0],{},null,false,false]},null,false,false],["$","$8","h",{"children":["$2f","$32","$38",["$","meta",null,{"name":"next-size-adjust","content":""},null,"$40",1]]},null,"$2e",0],false]],"m":"$W41","G":["$42",["$","$L6","ge-svn",{"type":"global-error","pagePath":"__next_builtin__global-error.js","children":[]},null,"$43",0]],"S":false}
+
+36:D{"time":11.085934000002453}
+36:[["$","meta","0",{"charSet":"utf-8"},"$28","$44",0],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"},"$28","$45",0]]
+e:D{"time":11.692257000002428}
+4f:D{"time":12.09647099999711}
+4f:D"$50"
+4f:D{"time":12.181123000002117}
+4f:D"$51"
+4f:D{"time":12.331425999997009}
+4f:[["$","title",null,{"children":"404: This page could not be found."},"$51","$52",1],["$","div",null,{"style":{"fontFamily":"system-ui,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}},"$51","$55",1],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404},"$51","$56",1],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."},"$51","$58",1]},"$51","$57",1]]},"$51","$54",1]},"$51","$53",1]]
+5d:D{"time":13.031380000000354}
+5d:D"$5e"
+5d:D{"time":13.78786399999808}
+65:D{"time":14.180082999999286}
+65:D"$66"
+65:D{"time":14.263671000000613}
+6e:D{"time":14.364799000002677}
+6e:D"$6f"
+6e:D{"time":14.525836000000709}
+6e:D"$70"
+6e:D{"time":14.664882999997644}
+6e:["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":20,"height":20,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-twitter","aria-hidden":"true","children":[["$","path","pff0z6",{"d":"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"},"$70","$72",0],"$undefined"]},"$70","$71",1]
+65:["$","$L6d",null,{"href":"#","className":"hover:text-cyan-400","children":"$6e"},"$66","$6c",1]
+73:D{"time":14.89622199999576}
+73:D"$74"
+73:D{"time":14.997083000002021}
+7b:D{"time":15.042960999999195}
+7b:D"$7c"
+7b:D{"time":15.149155999999493}
+7b:D"$7d"
+7b:D{"time":15.341441999997187}
+7b:["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":20,"height":20,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-linkedin","aria-hidden":"true","children":[["$","path","c2jq9f",{"d":"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"},"$7d","$7f",0],["$","rect","mk3on5",{"width":"4","height":"12","x":"2","y":"9"},"$7d","$80",0],["$","circle","bt5ra8",{"cx":"4","cy":"4","r":"2"},"$7d","$81",0],"$undefined"]},"$7d","$7e",1]
+73:["$","$L6d",null,{"href":"#","className":"hover:text-cyan-400","children":"$7b"},"$74","$7a",1]
+82:D{"time":15.7150679999977}
+82:D"$83"
+82:D{"time":15.790224999997008}
+8a:D{"time":15.834545999998227}
+8a:D"$8b"
+8a:D{"time":15.936202999997477}
+8a:D"$8c"
+8a:D{"time":16.069526999999653}
+8a:["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":20,"height":20,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-disc","aria-hidden":"true","children":[["$","circle","1mglay",{"cx":"12","cy":"12","r":"10"},"$8c","$8e",0],["$","circle","1c9p78",{"cx":"12","cy":"12","r":"2"},"$8c","$8f",0],"$undefined"]},"$8c","$8d",1]
+82:["$","$L6d",null,{"href":"#","className":"hover:text-cyan-400","children":"$8a"},"$83","$89",1]
+90:D{"time":16.37388700000156}
+90:D"$91"
+90:D{"time":16.44935599999735}
+98:D{"time":16.4947239
+99996495}
+98:D"$99"
+98:D{"time":16.591723999998067}
+98:D"$9a"
+98:D{"time":16.721870000001218}
+98:["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":20,"height":20,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-github","aria-hidden":"true","children":[["$","path","tonef",{"d":"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"},"$9a","$9c",0],["$","path","9comsn",{"d":"M9 18c-4.51 2-5-2-7-2"},"$9a","$9d",0],"$undefined"]},"$9a","$9b",1]
+90:["$","$L6d",null,{"href":"#","className":"hover:text-cyan-400","children":"$98"},"$91","$97",1]
+a2:D{"time":17.136201000001165}
+a2:D"$a3"
+a2:D{"time":17.204398000001675}
+a2:["$","$L6d",null,{"href":"/products?category=PERIPHERAL","className":"hover:text-cyan-400","children":"Peripherals"},"$a3","$a4",1]
+a6:D{"time":17.40661900000123}
+a6:D"$a7"
+a6:D{"time":17.51223200000095}
+a6:["$","$L6d",null,{"href":"/products?category=LAPTOP","className":"hover:text-cyan-400","children":"Laptops"},"$a7","$a8",1]
+aa:D{"time":17.647587999999814}
+aa:D"$ab"
+aa:D{"time":17.715680000001157}
+aa:["$","$L6d",null,{"href":"/products?category=SYSTEM","className":"hover:text-cyan-400","children":"Workstations"},"$ab","$ac",1]
+ae:D{"time":17.833673000001}
+ae:D"$af"
+ae:D{"time":17.897689999997965}
+ae:["$","$L6d",null,{"href":"/products?category=NETWORK","className":"hover:text-cyan-400","children":"Networking"},"$af","$b0",1]
+b5:D{"time":18.23506500000076}
+b5:D"$b6"
+b5:D{"time":18.324421999997867}
+b5:["$","$L6d",null,{"href":"/about","className":"hover:text-cyan-400","children":"About Us"},"$b6","$b7",1]
+b9:D{"time":18.443082999998296}
+b9:D"$ba"
+b9:D{"time":18.508003000002645}
+b9:["$","$L6d",null,{"href":"/business","className":"hover:text-cyan-400","children":"Business"},"$ba","$bb",1]
+bd:D{"time":18.625111000001198}
+bd:D"$be"
+bd:D{"time":18.692756999997073}
+bd:["$","$L6d",null,{"href":"#","className":"hover:text-cyan-400","children":"Careers"},"$be","$bf",1]
+c1:D{"time":18.802028999998583}
+c1:D"$c2"
+c1:D{"time":18.86621500000183}
+c1:["$","$L6d",null,{"href":"#","className":"hover:text-cyan-400","children":"Blog"},"$c2","$c3",1]
+c8:D{"time":19.153118000001996}
+c8:D"$c9"
+c8:D{"time":19.241550999999163}
+c8:["$","$L6d",null,{"href":"/contact","className":"hover:text-cyan-400","children":"Contact"},"$c9","$ca",1]
+cc:D{"time":19.46034299999883}
+cc:D"$cd"
+cc:D{"time":19.537703000001784}
+cc:["$","$L6d",null,{"href":"/faq","className":"hover:text-cyan-400","children":"FAQ"},"$cd","$ce",1]
+d0:D{"time":19.655281999999715}
+d0:D"$d1"
+d0:D{"time":19.736134999999194}
+d0:["$","$L6d",null,{"href":"#","className":"hover:text-cyan-400","children":"Returns"},"$d1","$d2",1]
+d4:D{"time":19.880640999996103}
+d4:D"$d5"
+d4:D{"time":19.946429999996326}
+d4:["$","$L6d",null,{"href":"#","className":"hover:text-cyan-400","children":"Track Order"},"$d5","$d6",1]
+da:D{"time":20.16729099999793}
+da:D"$db"
+da:D{"time":20.234134999998787}
+da:["$","$L6d",null,{"href":"#","className":"hover:text-cyan-400","children":"Privacy Policy"},"$db","$dc",1]
+dd:D{"time":20.33856399999786}
+dd:D"$de"
+dd:D{"time":20.420806000001903}
+dd:["$","$L6d",null,{"href":"#","className":"hover:text-cyan-400","children":"Terms of Service"},"$de","$df",1]
+e0:D{"time":20.488080999995873}
+e0:D"$e1"
+e0:D{"time":20.554027999998652}
+e0:["$","$L6d",null,{"href":"#","className":"hover:text-cyan-400","children":"Cookie Policy"},"$e1","$e2",1]
+
+5d:["$","footer",null,{"className":"bg-black border-t border-cyan-900/30 text-slate-400 py-12","children":[["$","div",null,{"className":"container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8","children":[["$","div",null,{"className":"space-y-4","children":[["$","h3",null,{"className":"text-2xl font-bold text-white tracking-tighter","children":"NEXUS"},"$5e","$62",1],["$","p",null,{"className":"text-sm","children":"Premium IT hardware for the next generation."},"$5e","$63",1],["$","div",null,{"className":"flex space-x-4","children":["$65","$73","$82","$90"]},"$5e","$64",1]]},"$5e","$61",1],["$","div",null,{"className":"space-y-4","children":[["$","h4",null,{"className":"text-white font-semibold","children":"SHOP"},"$5e","$9f",1],["$","ul",null,{"className":"space-y-2 text-sm","children":[["$","li",null,{"children":"$a2"},"$5e","$a1",1],["$","li",null,{"children":"$a6"},"$5e","$a5",1],["$","li",null,{"children":"$aa"},"$5e","$a9",1],["$","li",null,{"children":"$ae"},"$5e","$ad",1]]},"$5e","$a0",1]]},"$5e","$9e",1],["$","div",null,{"className":"space-y-4","children":[["$","h4",null,{"className":"text-white font-semibold","children":"COMPANY"},"$5e","$b2",1],["$","ul",null,{"className":"space-y-2 text-sm","children":[["$","li",null,{"children":"$b5"},"$5e","$b4",1],["$","li",null,{"children":"$b9"},"$5e","$b8",1],["$","li",null,{"children":"$bd"},"$5e","$bc",1],["$","li",null,{"children":"$c1"},"$5e","$c0",1]]},"$5e","$b3",1]]},"$5e","$b1",1],["$","div",null,{"className":"space-y-4","children":[["$","h4",null,{"className":"text-white font-semibold","children":"SUPPORT"},"$5e","$c5",1],["$","ul",null,{"className":"space-y-2 text-sm","children":[["$","li",null,{"children":"$c8"},"$5e","$c7",1],["$","li",null,{"children":"$cc"},"$5e","$cb",1],["$","li",null,{"children":"$d0"},"$5e","$cf",1],["$","li",null,{"children":"$d4"},"$5e","$d3",1]]},"$5e","$c6",1]]},"$5e","$c4",1]]},"$5e","$60",1],["$","div",null,{"className":"container mx-auto px-4 mt-12 pt-8 border-t border-cyan-900/30 flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-xs","children":"© 2025 NEXUS Technologies SAS. All rights reserved. Boulogne-Billancourt, France 🇫🇷"},"$5e","$d8",1],["$","div",null,{"className":"flex gap-4 text-xs","children":["$da","$dd","$e0"]},"$5e","$d9",1]]},"$5e","$d7",1]]},"$5e","$5f",1]
+
+e:["$","$L47",null,{"publishableKey":"pk_test_bmV4dXMtc3RvcmUuaW8k","clerkJSUrl":"$undefined","clerkJSVersion":"$undefined","proxyUrl":"","domain":"","isSatellite":false,"signInUrl":"","signUpUrl":"","signInForceRedirectUrl":"","signUpForceRedirectUrl":"","signInFallbackRedirectUrl":"","signUpFallbackRedirectUrl":"","afterSignInUrl":"","afterSignUpUrl":"","newSubscriptionRedirectUrl":"","telemetry":{"disabled":false,"debug":false},"sdkMetadata":{"name":"@clerk/nextjs","version":"6.37.5","environment":"development"},"nonce":"","initialState":null,"children":["$","html",null,{"lang":"en","className":"dark","children":["$","body",null,{"className":"inter_5972bc34-module__OU16Qa__className","children":[["$","$L4b",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4d",null,{},null,"$4c",1],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L6","c-not-found",{"type":"not-found","pagePath":"__next_builtin__not-found.js","children":["$4f",[]]},null,"$4e",0],"forbidden":"$undefined","unauthorized":"$undefined","segmentViewBoundaries":[["$","$L6",null,{"type":"boundary:not-found","pagePath":"__next_builtin__not-found.js@boundary"},null,"$59",1],"$undefined","$undefined",["$","$L6",null,{"type":"boundary:global-error","pagePath":"__next_builtin__global-error.js"},null,"$5a",1]]},null,"$4a",1],["$","$L5c",null,{},"$f","$5b",1],"$5d",["$","$Le4",null,{},"$f","$e3",1]]},"$f","$49",1]},"$f","$48",1]},"$18","$46",1]
+
+2d:D{"time":21.386145999997098}
+2d:null
+3e:D{"time":21.40209799999866}
+3e:[["$","title","0",{"children":"2027 Online Shop"},"$28","$e5",0],["$","meta","1",{"name":"description","content":"The future of e-commerce"},"$28","$e6",0],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.0b3bf435.ico","sizes":"256x256","type":"image/x-icon"},"$28","$e7",0],["$","$Le9","3",{},"$28","$e8",0]]
+
+

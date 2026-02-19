@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@nestjs/mapped-types": "*",
+    "dotenv": "^17.3.1",
+    "pm2": "^6.0.14"
+  },
+  "name": "2027-online-shop",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces",
+    "test": "npm run test --workspaces",
+    "swarm": "npx tsx scripts/start-swarm.ts",
+    "swarm:prod": "npx pm2 start scripts/start-swarm.ts --name agent-swarm --interpreter npx --interpreter-args tsx"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.14"
+  }
+}

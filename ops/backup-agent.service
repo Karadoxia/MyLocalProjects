@@ -1,8 +1,0 @@
-[Unit]
-Description=New-project cart backup agent
-After=network.target
-
-[Service]
-Type=oneshot
-WorkingDirectory=/home/redbend/Desktop/00-Projects/new-project
-ExecStart=/usr/bin/node ./scripts/backup-cart.js
