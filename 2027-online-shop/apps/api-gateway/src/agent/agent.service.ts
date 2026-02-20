@@ -80,4 +80,73 @@ export class AgentService {
             message: "Your PC is Windows 11 Ready! No upgrade needed yet, but check our peripherals to boost productivity."
         };
     }
+
+    prompt(prompt: string) {
+        const lowerPrompt = prompt.toLowerCase();
+
+        if (lowerPrompt.includes('product') || lowerPrompt.includes('catalog')) {
+            return {
+                response: "Our catalog features cutting-edge hardware: Neural Link Interfaces, Quantum Core Workstations, Cyberdeck Portables, and Optical Data Nodes.",
+                context: "product-catalog"
+            };
+        }
+
+        if (lowerPrompt.includes('price') || lowerPrompt.includes('cost')) {
+            return {
+                response: "Prices range from $349 for networking gear up to $4,500 for quantum workstations. SMB bulk discounts available.",
+                context: "pricing"
+            };
+        }
+
+        if (lowerPrompt.includes('ship') || lowerPrompt.includes('deliver')) {
+            return {
+                response: "We offer same-day dropship fulfillment via our automated supplier network (Ingram Micro, Tech Data, CJDropshipping).",
+                context: "fulfillment"
+            };
+        }
+
+        return {
+            response: "I can help with product catalog queries, pricing, fulfillment, and market intelligence. What would you like to know?",
+            context: "general"
+        };
+    }
+
+    scrape(url: string) {
+        // Validate URL format
+        let hostname: string;
+        try {
+            hostname = new URL(url).hostname;
+        } catch {
+            return { error: "Invalid URL provided", url };
+        }
+
+        // Mock scrape result — in production this would call a headless browser or fetch
+        return {
+            url,
+            source: hostname,
+            extracted: {
+                title: `Product listing from ${hostname}`,
+                items: [
+                    { name: "Imported Item A", price: 299, available: true },
+                    { name: "Imported Item B", price: 499, available: false },
+                ],
+                scrapedAt: new Date().toISOString(),
+            },
+        };
+    }
+
+    demo() {
+        return {
+            agent: "MCP Strategic Agent v1",
+            capabilities: [
+                { endpoint: "POST /agent/chat", description: "Keyword-based market intelligence chat" },
+                { endpoint: "POST /agent/prompt", description: "Natural-language product & fulfillment Q&A" },
+                { endpoint: "POST /agent/scrape", description: "Extract product listings from a supplier URL" },
+                { endpoint: "POST /agent/check-compatibility", description: "Windows 11 hardware compatibility checker" },
+                { endpoint: "GET /agent/demo", description: "This endpoint — capability overview" },
+            ],
+            marketIntelSummary: this.marketIntel.trim(),
+            status: "operational",
+        };
+    }
 }

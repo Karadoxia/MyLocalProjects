@@ -10,3 +10,5 @@ backups/
 
 # test artifacts
 test/*.json
+playwright-report/
+test-results/

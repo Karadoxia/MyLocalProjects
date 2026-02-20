@@ -1,0 +1,17 @@
+{
+  "name": "my-local-projects",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo root — orchestrates build/test/E2E for 2027-online-shop API gateway",
+  "scripts": {
+    "build:all": "npm run build --prefix 2027-online-shop/apps/api-gateway",
+    "test": "npm test --prefix 2027-online-shop/apps/api-gateway",
+    "test:e2e": "npx playwright test --config=playwright.config.cjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
