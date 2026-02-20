@@ -1,32 +1,221 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-generator client {
-  provider = "prisma-client-js"
-}
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
+generator client {
+  provider = "prisma-client-js"
+}
+
 model Product {
-  id          String   @id @default(uuid())
-  name        String
-  price       Float
-  category    String
-  image       String
-  specs       String[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id            String   @id @default(uuid())
+  sku           String   @unique
+  title         String
+  description   String
+  price         Float
+  supplierPrice Float
+  category      String
+  images        String   // JSON string of image URLs
+  status        String   // DRAFT, ACTIVE, PAUSED, ARCHIVED
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  supplierId    String?
+  supplier      Supplier? @relation(fields: [supplierId], references: [id])
+  
+  inventory     InventoryItem?
+  orderItems    OrderItem[]
 }
 
 model Supplier {
+  id               String   @id @default(uuid())
+  name             String   @unique // AliExpress, CJDropshipping, Spocket, BigBuy
+  apiKey           String?
+  apiEndpoint      String?
+  reliabilityScore Float    @default(1.0)
+  avgDeliveryDays  Int      @default(7)
+  isActive         Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  products         Product[]
+  inventoryItems   InventoryItem[]
+  deals            DealCandidate[]
+  procurements     ProcurementOrder[]
+}
+
+// ─── Vendor Integration Models ───────────────────────────────
+
+model DealCandidate {
+  id             String   @id @default(uuid())
+  supplierId     String
+  supplier       Supplier @relation(fields: [supplierId], references: [id])
+  externalId     String   // Product ID on supplier platform
+  title          String
+  supplierPrice  Float
+  suggestedPrice Float    // After margin calculation
+  margin         Float
+  category       String
+  images         String   // JSON array of image URLs
+  score          Float    @default(0)          // AI deal score 0–100
+  status         String   @default("DISCOVERED") // DISCOVERED, APPROVED, IMPORTED, REJECTED
+  reasoning      String?  // LLM reasoning for score
+  discoveredAt   DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model NegotiationLog {
   id          String   @id @default(uuid())
+  supplierId  String
+  dealId      String?
+  action      String   // PRICE_CHECK, BULK_QUOTE, COUNTER_OFFER, ACCEPTED, REJECTED
+  request     String   // JSON payload sent
+  response    String   // JSON response received
+  timestamp   DateTime @default(now())
+}
+
+model ProcurementOrder {
+  id              String   @id @default(uuid())
+  supplierId      String
+  supplier        Supplier @relation(fields: [supplierId], references: [id])
+  items           String   // JSON array of {sku, qty, unitPrice}
+  totalCost       Float
+  status          String   @default("PENDING") // PENDING, APPROVED, ORDERED, SHIPPED, RECEIVED, FAILED
+  triggeredBy     String   // "auto_reorder" | "agent_decision" | "manual"
+  supplierOrderId String?  // ID from supplier after placing
+  trackingNumber  String?
+  carrier         String?
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model InventoryItem {
+  id            String   @id @default(uuid())
+  productId     String   @unique
+  product       Product  @relation(fields: [productId], references: [id])
+  
+  supplierId    String
+  supplier      Supplier @relation(fields: [supplierId], references: [id])
+  
+  externalSku   String   // SKU on the supplier's system
+  stockLevel    Int
+  reorderLevel  Int      @default(10)
+  lastChecked   DateTime @default(now())
+}
+
+model Order {
+  id              String      @id @default(uuid())
+  orderNumber     String      @unique
+  customerEmail   String
+  total           Float
+  status          String      // PENDING, PAID, PROCESSING, SHIPPED, DELIVERED, CANCELLED
+  paymentId       String?
+  
+  // Shipping Info
+  shippingAddress String      // JSON string
+  trackingNumber  String?
+  carrier         String?
+  
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  
+  items           OrderItem[]
+  customer        Customer?   @relation(fields: [customerEmail], references: [email])
+}
+
+model OrderItem {
+  id              String   @id @default(uuid())
+  orderId         String
+  order           Order    @relation(fields: [orderId], references: [id])
+
+  productId       String?           // null for external supplier items not yet in catalog
+  product         Product?  @relation(fields: [productId], references: [id])
+  productName     String            // snapshot of name at purchase time
+  productSnapshot String            // JSON snapshot of full item data
+
+  quantity        Int
+  price           Float             // price at time of purchase
+}
+
+model Customer {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  name          String?
+  totalSpend    Float    @default(0)
+  ordersCount   Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  orders        Order[]
+}
+
+model PricingRule {
+  id            String   @id @default(uuid())
+  category      String   @unique
+  marginFloor   Float    // Minimum margin (e.g. 0.25 for 25%)
+  targetMargin  Float    // Target margin (e.g. 0.40 for 40%)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model AgentLog {
+  id            String   @id @default(uuid())
+  agentName     String
+  action        String
+  payload       String   // JSON string of input/output
+  timestamp     DateTime @default(now())
+  level         String   @default("INFO") // INFO, WARN, ERROR
+}
+
+model Event {
+  id            String   @id @default(uuid())
+  type          String   // order.created, inventory.low, etc.
+  payload       String   // JSON string
+  source        String
+  target        String?  // Target agent name
+  timestamp     DateTime @default(now())
+  processed     Boolean  @default(false)
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  role      String   @default("CUSTOMER") // ADMIN, CUSTOMER, AGENT
+  password  String?  // Hashed password (optional for now in mock)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ─── Agent Network ────────────────────────────────────────
+
+model Agent {
+  id          String       @id @default(uuid())
+  slug        String       @unique  // URL-friendly, e.g. "jean-dupont"
   name        String
-  url         String
-  reliability Float
+  email       String       @unique
+  level       String       @default("Sub-Agent") // Sub-Agent, Agent, Senior Agent, Director
+  tier        String       @default("bronze")    // bronze, silver, gold, platinum
+  region      String       @default("")
+  commissionRate Float     @default(0.06)        // e.g. 0.08 = 8%
+  parentId    String?
+  parent      Agent?       @relation("AgentHierarchy", fields: [parentId], references: [id])
+  subAgents   Agent[]      @relation("AgentHierarchy")
+  commissions Commission[]
+  status      String       @default("active")    // active, pending, inactive
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Commission {
+  id          String   @id @default(uuid())
+  agentId     String
+  agent       Agent    @relation(fields: [agentId], references: [id])
+  orderId     String   @unique
+  orderTotal  Float
+  rate        Float    // commission rate applied
+  amount      Float    // commission amount = orderTotal * rate
+  status      String   @default("PENDING") // PENDING, PAID
+  createdAt   DateTime @default(now())
 }

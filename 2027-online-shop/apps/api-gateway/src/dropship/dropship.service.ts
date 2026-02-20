@@ -11,12 +11,16 @@ export class DropshipService {
     this.logger.log(`Importing product from: ${url}`);
 
     // Mock scraping logic
+    const slug = url.split('/').pop() || 'item';
     const newItem = {
-      name: `Imported Tech Item (${url.split('/').pop()})`,
+      sku: `IMP-${slug.toUpperCase().slice(0, 10)}-${Date.now()}`,
+      title: `Imported Tech Item (${slug})`,
+      description: 'Imported product from external source.',
       price: Math.floor(Math.random() * 1000) + 100,
+      supplierPrice: Math.floor(Math.random() * 500) + 50,
       category: 'IMPORTED',
-      image: '/placeholder',
-      specs: ['Source: External', 'Condition: New'],
+      images: JSON.stringify(['/placeholder']),
+      status: 'DRAFT',
     };
 
     return this.productsService.addProduct(newItem);

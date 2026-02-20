@@ -1,6 +1,23 @@
 version: '3.8'
 
+# ═══════════════════════════════════════════════════════════════════
+# NEXUS V2 — 100% FREE OPEN SOURCE INFRASTRUCTURE
+# All software: €0/month. Only VPS hosting costs (or run locally).
+#
+# New services vs original:
+#   + Meilisearch (MIT)    — product search, replaces Elasticsearch/paid search
+#   + MinIO       (AGPL)   — object storage, replaces AWS S3
+#   + Zitadel     (Apache) — auth, replaces Clerk
+#   + Listmonk    (AGPL)   — newsletters, replaces Mailchimp
+#   + Umami       (MIT)    — web analytics, replaces Google Analytics
+#   + Prometheus  (Apache) — metrics, replaces Datadog
+#   + Grafana     (AGPL)   — dashboards, replaces Datadog UI
+#   + Jaeger      (Apache) — distributed tracing, replaces New Relic
+# ═══════════════════════════════════════════════════════════════════
+
 services:
+
+  # ─── PRIMARY DATABASE ──────────────────────────────────────────
   postgres:
     image: postgres:16-alpine
     container_name: nexus_db
@@ -12,9 +29,16 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./infra/init-extensions.sql:/docker-entrypoint-initdb.d/01-extensions.sql
     networks:
       - nexus_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nexus -d nexus_shop"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
+  # ─── CACHE ────────────────────────────────────────────────────
   redis:
     image: redis:7-alpine
     container_name: nexus_cache
@@ -22,9 +46,181 @@ services:
       - "6379:6379"
     networks:
       - nexus_net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─── SEARCH ENGINE (MIT) — replaces Elasticsearch paid tier ───
+  # Sub-50ms typo-tolerant search. Perfect for product catalog.
+  meilisearch:
+    image: getmeili/meilisearch:v1.9
+    container_name: nexus_search
+    environment:
+      MEILI_MASTER_KEY: nexus-meili-key-change-in-production
+      MEILI_ENV: development
+    ports:
+      - "7700:7700"
+    volumes:
+      - meilisearch_data:/meili_data
+    networks:
+      - nexus_net
+
+  # ─── OBJECT STORAGE (AGPL) — replaces AWS S3 ──────────────────
+  # S3-compatible API. Handles petabytes in production.
+  minio:
+    image: minio/minio:latest
+    container_name: nexus_storage
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: nexus-minio-access
+      MINIO_ROOT_PASSWORD: nexus-minio-secret-change-in-production
+    ports:
+      - "9000:9000"   # S3 API
+      - "9001:9001"   # Web console (http://localhost:9001)
+    volumes:
+      - minio_data:/data
+    networks:
+      - nexus_net
+
+  # ─── AUTH SERVER (Apache 2.0) — replaces Clerk ────────────────
+  # Cloud-native, multi-tenant, OIDC/OAuth2/WebAuthn/MFA/Passkeys.
+  # Multi-tenant = perfect for Director/Agent hierarchy in NEXUS.
+  # Admin console: http://localhost:8080
+  zitadel:
+    image: ghcr.io/zitadel/zitadel:latest
+    container_name: nexus_auth
+    command: start-from-init --masterkeyFromEnv
+    environment:
+      ZITADEL_MASTERKEY: MasterkeyNeedsToHave32Characters
+      ZITADEL_DATABASE_POSTGRES_HOST: postgres
+      ZITADEL_DATABASE_POSTGRES_PORT: 5432
+      ZITADEL_DATABASE_POSTGRES_DATABASE: zitadel
+      ZITADEL_DATABASE_POSTGRES_USER_USERNAME: nexus
+      ZITADEL_DATABASE_POSTGRES_USER_PASSWORD: password
+      ZITADEL_DATABASE_POSTGRES_USER_SSL_MODE: disable
+      ZITADEL_DATABASE_POSTGRES_ADMIN_USERNAME: nexus
+      ZITADEL_DATABASE_POSTGRES_ADMIN_PASSWORD: password
+      ZITADEL_DATABASE_POSTGRES_ADMIN_SSL_MODE: disable
+      ZITADEL_EXTERNALDOMAIN: localhost
+      ZITADEL_EXTERNALPORT: 8080
+      ZITADEL_EXTERNALSECURE: false
+      ZITADEL_TLS_ENABLED: false
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - nexus_net
+
+  # ─── NEWSLETTER MANAGER (AGPL) — replaces Mailchimp ───────────
+  # Single binary. Sends 7M+ emails with 57MB RAM. PostgreSQL-backed.
+  # Admin console: http://localhost:9100
+  listmonk:
+    image: listmonk/listmonk:latest
+    container_name: nexus_newsletter
+    environment:
+      LISTMONK_app__address: "0.0.0.0:9100"
+      LISTMONK_db__host: postgres
+      LISTMONK_db__port: 5432
+      LISTMONK_db__name: listmonk
+      LISTMONK_db__user: nexus
+      LISTMONK_db__password: password
+    ports:
+      - "9100:9100"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - nexus_net
+
+  # ─── WEB ANALYTICS (MIT) — replaces Google Analytics ─────────
+  # Privacy-first, GDPR-compliant, cookie-free option available.
+  # Admin console: http://localhost:3001
+  umami:
+    image: ghcr.io/umami-software/umami:postgresql-latest
+    container_name: nexus_analytics
+    environment:
+      DATABASE_URL: postgresql://nexus:password@postgres:5432/umami
+      DATABASE_TYPE: postgresql
+      APP_SECRET: umami-app-secret-change-in-production
+    ports:
+      - "3001:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - nexus_net
+
+  # ─── METRICS (Apache 2.0) — replaces Datadog/New Relic ───────
+  # Scrapes metrics from all services.
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: nexus_metrics
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./infra/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - nexus_net
+
+  # ─── DASHBOARDS (AGPL) — replaces Datadog UI ─────────────────
+  # Visualizes Prometheus metrics with beautiful dashboards.
+  # Admin console: http://localhost:3002 (admin/nexus-grafana-admin)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: nexus_dashboards
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: nexus-grafana-admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    ports:
+      - "3002:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    networks:
+      - nexus_net
+
+  # ─── DISTRIBUTED TRACING (Apache 2.0) — replaces New Relic ───
+  # Traces requests across all NEXUS microservices.
+  # Jaeger UI: http://localhost:16686
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: nexus_tracing
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true"
+    ports:
+      - "16686:16686"   # Jaeger UI
+      - "4317:4317"     # OTLP gRPC receiver
+      - "4318:4318"     # OTLP HTTP receiver
+    networks:
+      - nexus_net
+
+  # ─── CRYPTO PAYMENTS (MIT) — replaces Stripe fees ─────────────
+  # 0% transaction fees. Bitcoin + Lightning Network + USDT.
+  # Uncomment when ready to accept crypto payments.
+  # btcpay:
+  #   image: btcpayserver/btcpayserver:latest
+  #   container_name: nexus_payments
+  #   ports:
+  #     - "14142:14142"
+  #   networks:
+  #     - nexus_net
 
 volumes:
   postgres_data:
+  meilisearch_data:
+  minio_data:
+  prometheus_data:
+  grafana_data:
 
 networks:
   nexus_net:

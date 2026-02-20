@@ -1,0 +1,17 @@
+Let me start by examining your current site, then I'll research the major platforms and build you a comprehensive prototype.Now let me check the frontend design skill and research the key features of major platforms.Now I have a complete picture. Let me build your NEXUS platform — a full-stack dropshipping e-commerce prototype with agent/sub-agent management. This is going to be massive.Here's your **NEXUS Platform** — a full-scale dropshipping e-commerce system with agent/sub-agent management. Here's what's inside:
+
+**🛒 Storefront** — Product catalog with search, filters, categories, grid/list views, wishlist, product detail pages, and add-to-cart
+
+**👥 Agents & Teams** — Full hierarchy system with Director → Senior Agent → Agent → Sub-Agent tree, performance leaderboard, commission breakdown, recruitment form, and a 4-tier program (Bronze/Silver/Gold/Platinum) with escalating rates and override bonuses
+
+**📦 Orders** — Complete order management with status tracking (pending → processing → shipped → delivered), filtering, supplier attribution, and tracking numbers
+
+**🌐 Suppliers & Dropship** — Supplier directory with ratings/metrics, a 6-step fulfillment pipeline visualization, product sourcing request form, and quality control workflow with QC stats
+
+**📊 Analytics** — Revenue trends, top products, regional breakdown, fulfillment metrics, and growth indicators
+
+**🛒 Cart & Checkout** — Full cart with quantity management, promo codes, tax calculation, and multi-payment support (Visa/MC/PayPal/Crypto)
+
+**⚙️ Settings** — Platform config, security, shipping, payment gateways, notifications, and integrations (Shopify, WooCommerce, CJ Dropshipping, Slack, Google Analytics)
+
+Click the file to interact with the full prototype — everything is wired up and clickable.

@@ -1,0 +1,53 @@
+# NEXUS 2027: Project Executive Brief 🚀
+
+**Subject**: Project Status & Architecture Overview - `2027-online-shop`
+**Recipient**: Casper Tech Executive Team
+**Date**: February 19, 2026
+
+## 1. Executive Summary
+
+The NEXUS platform is a next-generation, autonomous e-commerce ecosystem designed for the 2027 tech market. It integrates real-time dropshipping fulfillment, autonomous AI management agents, and premium user experiences with a zero-budget infrastructure target.
+
+## 2. Core Architecture & Tech Stack
+
+The project follows a modern **Monolithic-to-Distributed** architecture, transitioning into an autonomous swarm-based management system.
+
+| Layer | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Frontend** | Next.js 16 (App Router), TailwindCSS | High-performance, SEO-optimized UI. |
+| **State** | Zustand (Persistent) | Lightweight, fast client-side state management. |
+| **Auth** | Clerk | Multi-factor authentication & user management. |
+| **Database** | Prisma + SQLite (Initial) | Type-safe ORM for inventory and order tracking. |
+| **Payments** | Stripe | Global payment processing & webhook integration. |
+| **Email** | Resend API | Transactional communications (Domain verified). |
+| **Automation** | Autonomous Agent Swarm | AI agents managing inventory, pricing, and QA. |
+| **Process Mgmt** | PM2 + systemd | Reboot-proof persistence and daemonization. |
+
+## 3. The Autonomous Agent Swarm (NEXUS Swarm)
+
+A unique feature of NEXUS is its background agent layer, which operates independently of the web server:
+
+- **Orchestrator (The CEO)**: Coordinates multi-agent tasks and prioritizes objectives.
+- **Catalog Agent**: Idempotently imports and syncs inventory from CJ Dropshipping.
+- **Quality Agent (QA)**: Continuously monitors builds and linting for integrity.
+- **Fulfillment Agent**: Interfaces with suppliers to automate order placement.
+
+## 4. Key Security & Compliance
+
+- **Clerk Guardrails**: Implemented the latest security patterns, including `proxy.ts` middleware and secure API key management.
+- **Data Safety**: All secrets are managed via `.env` (git-ignored) and verified with `.gitignore` audits.
+- **EU Compliance**: Incorporated WEEE and legal transparency pages to meet European standards.
+
+## 5. Infrastructure Status
+
+- **Zero-Budget Combo**: Targeted for deployment on Vercel (Free Tier) with a `nic.eu.org` free domain.
+- **Reboot Persistence**: Services are configured to auto-restart on host failure via `pm2 save` and `systemctl`.
+
+## 6. Next Steps
+
+- Finalize `nic.eu.org` domain verification.
+- Link Zoho Mail for professional correspondence.
+- Scale the Agent Swarm for real-time market negotiation.
+
+---
+**Status**: Ready for Production Build & Final Domain Binding.
