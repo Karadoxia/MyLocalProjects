@@ -9,44 +9,48 @@ export class ProductsService implements OnModuleInit {
   constructor(private prisma: PrismaService) { }
 
   async onModuleInit() {
-    const count = await this.prisma.product.count();
-    if (count === 0) {
-      this.logger.log('Seeding initial products...');
-      const initialProducts: Prisma.ProductCreateInput[] = [
-        {
-          name: 'Neural Link Interface v4',
-          price: 899,
-          category: 'PERIPHERAL',
-          image: '/placeholder',
-          specs: ['Latency < 1ms', 'Wireless', 'Brain-Computer I/O'],
-        },
-        {
-          name: 'Quantum Core Workstation',
-          price: 4500,
-          category: 'SYSTEM',
-          image: '/placeholder',
-          specs: ['128 Qubits', 'Liquid Cooling', 'Holographic Display'],
-        },
-        {
-          name: 'Cyberdeck Portable MK.II',
-          price: 1250,
-          category: 'LAPTOP',
-          image: '/placeholder',
-          specs: ['Ruggedized', 'Mech Keys', 'Sat-Link Module'],
-        },
-        {
-          name: 'Optical Data Node',
-          price: 349,
-          category: 'NETWORK',
-          image: '/placeholder',
-          specs: ['100Gbps', 'Mesh Compatible', 'Zero-Trust OS'],
-        },
-      ];
+    try {
+      const count = await this.prisma.product.count();
+      if (count === 0) {
+        this.logger.log('Seeding initial products...');
+        const initialProducts: Prisma.ProductCreateInput[] = [
+          {
+            name: 'Neural Link Interface v4',
+            price: 899,
+            category: 'PERIPHERAL',
+            image: '/placeholder',
+            specs: ['Latency < 1ms', 'Wireless', 'Brain-Computer I/O'],
+          },
+          {
+            name: 'Quantum Core Workstation',
+            price: 4500,
+            category: 'SYSTEM',
+            image: '/placeholder',
+            specs: ['128 Qubits', 'Liquid Cooling', 'Holographic Display'],
+          },
+          {
+            name: 'Cyberdeck Portable MK.II',
+            price: 1250,
+            category: 'LAPTOP',
+            image: '/placeholder',
+            specs: ['Ruggedized', 'Mech Keys', 'Sat-Link Module'],
+          },
+          {
+            name: 'Optical Data Node',
+            price: 349,
+            category: 'NETWORK',
+            image: '/placeholder',
+            specs: ['100Gbps', 'Mesh Compatible', 'Zero-Trust OS'],
+          },
+        ];
 
-      for (const product of initialProducts) {
-        await this.prisma.product.create({ data: product });
+        for (const product of initialProducts) {
+          await this.prisma.product.create({ data: product });
+        }
+        this.logger.log('Seeding complete.');
       }
-      this.logger.log('Seeding complete.');
+    } catch (err) {
+      this.logger.warn(`Product seeding skipped (DB unavailable): ${(err as Error).message}`);
     }
   }
 
